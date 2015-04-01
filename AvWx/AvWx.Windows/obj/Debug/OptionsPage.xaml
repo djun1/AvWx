@@ -1,0 +1,76 @@
+﻿<SettingsFlyout x:ConnectionId='1'
+    x:Class="AvWx.OptionsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AvWx"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    IconSource="Assets/SmallLogo.png"
+    Title="Options"
+    d:DesignWidth="346"                                                  >
+
+    <!-- This StackPanel acts as a root panel for vertical layout of the content sections -->
+    <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="265" >
+
+        <!-- The StackPanel(s) below define individual content sections -->
+
+        <!-- Content Section 1-->
+        <StackPanel Style="{StaticResource SettingsFlyoutSectionStyle}">
+            <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="Station" />
+            <Grid Margin="0,12,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <RadioButton x:Name="CountryRadioButton1" Grid.Column="0" Content="Canada" GroupName="CountryBoxes" />
+                <RadioButton x:Name="CountryRadioButton2" Grid.Column="1" Content="USA" GroupName="CountryBoxes" />
+            </Grid>
+            <ComboBox x:ConnectionId='2' x:Name="ProvinceComboBox" Margin="0,12,0,0" Padding="10,0,27,0"                                                      SelectedIndex="0">
+                <x:String></x:String>
+            </ComboBox>
+            <ComboBox x:Name="StationComboBox" Margin="0,12,0,0" Padding="10,0,27,0"/>
+
+            <TextBlock Style="{StaticResource TitleTextBlockStyle}" x:Name="ProductName" Text="Satellite Product" Margin="0,24,0,0"/>
+            <Grid Margin="0,12,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <RadioButton x:Name="ProductRadioButton1" Grid.Column="0" Grid.Row="0" Content="Infrared" GroupName="ProductBoxes"/>
+                <RadioButton x:Name="ProductRadioButton2" Grid.Column="1" Grid.Row="0" Content="Rainbow"  GroupName="ProductBoxes"/>
+                <RadioButton x:Name="ProductRadioButton3" Grid.Column="0" Grid.Row="1" Content="RGB" GroupName="ProductBoxes"/>
+                <RadioButton x:Name="ProductRadioButton4" Grid.Column="1" Grid.Row="1" Content="Visible" GroupName="ProductBoxes" />
+            </Grid>
+
+            <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="Duration" Margin="0,24,0,0"/>
+            <Grid Margin="0,12,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <RadioButton x:Name="DurationRadioButton3" Grid.Column="0" Content="Latest" GroupName="DurationBoxes" />
+                <RadioButton x:Name="DurationRadioButton1" Grid.Column="1" Content="3 hr" GroupName="DurationBoxes"/>
+                <RadioButton x:Name="DurationRadioButton2" Grid.Column="2" Content="6 hr" GroupName="DurationBoxes"/>
+            </Grid>
+
+            <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="Loop Speed (time per image)" Margin="0,24,0,0"/>
+            <Grid Margin="0,12,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <RadioButton x:Name="LoopTimerRadioButton1" Grid.Column="0" Content="0.1 sec" GroupName="LoopTimerBoxes"/>
+                <RadioButton x:Name="LoopTimerRadioButton2" Grid.Column="1" Content="0.5 sec" GroupName="LoopTimerBoxes"/>
+                <RadioButton x:Name="LoopTimerRadioButton3" Grid.Column="2" Content="1 sec" GroupName="LoopTimerBoxes"/>
+            </Grid>
+        </StackPanel>
+    </StackPanel>
+</SettingsFlyout>
+
