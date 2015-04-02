@@ -614,13 +614,13 @@ static class GenericCodeClass
             }
             catch (Exception e)
             {
-                HomeStationURL = "http://www.ssd.noaa.gov/goes/west/vanc/img/";
+                HomeStationURL = "https://flightplanning.navcanada.ca/Latest/anglais/produits/analyses/surface/";
                 LoopTimerInterval = new TimeSpan(0, 0, 0, 0, 500);
-                HomeStationString = "Vancouver";
+                HomeStationString = "Surface";
                 DownloadPeriod = 1;
                 SatelliteType = "vis";
-                HomeStationCode = "west/vanc";
-                HomeProvince = "British Columbia";
+                HomeStationCode = "surface";
+                HomeProvince = "Analysis Charts";
                 IsCanadaSelected = true;
             }
         }
