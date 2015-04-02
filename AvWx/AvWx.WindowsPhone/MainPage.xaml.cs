@@ -308,8 +308,8 @@ namespace AvWx
             if (Files.Count != 0 && ImageIndex >= 0 && ImageIndex <= Files.Count)
             {
                 BitmapImage img = await GenericCodeClass.GetBitmapImage(ImageFolder, Files[ImageIndex]);
-                DateTime LocalTime = GenericCodeClass.GetDateTimeFromFile(Files[ImageIndex]);
-                StatusBox.Text = LocalTime.ToString("MMM dd HH:mm") + "   " + (ImageIndex + 1).ToString() + "/" + Files.Count.ToString() + " " + SatelliteProduct;
+                //DateTime LocalTime = GenericCodeClass.GetDateTimeFromFile(Files[ImageIndex]);
+                StatusBox.Text = (ImageIndex + 1).ToString() + "/" + Files.Count.ToString() + " " + SatelliteProduct;
 
                 if (GenericCodeClass.HomeStationCodeString.Equals("WEST_CAN_USA") || GenericCodeClass.HomeProvinceName.Equals("Polar Imagery"))
                     ImgBox.Height = 0.7 * img.PixelHeight; //Change the factor to scale the sizes of the western Canada and polar images.

@@ -1,1 +1,1 @@
-C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Windows\AvWx.Windows.csproj;neutral
+C:\Users\Daniel\SkyDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Windows\AvWx.Windows.csproj;neutral
