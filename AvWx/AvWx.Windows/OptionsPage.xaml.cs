@@ -167,6 +167,7 @@ namespace AvWx
                 GenericCodeClass.HomeStationName = StationComboBox.Items[StationComboBox.SelectedIndex].ToString();
                 GenericCodeClass.HomeProvinceName = ProvinceComboBox.Items[ProvinceComboBox.SelectedIndex].ToString();
                 GenericCodeClass.SatelliteTypeString = ChosenSatelliteType;
+                GenericCodeClass.TypeCodeString = TypeComboBox.Items[TypeComboBox.SelectedIndex].ToString();
             }
             //Better to check for existing download intervals before setting new times?
             if (DurationRadioButton1.IsChecked == true)

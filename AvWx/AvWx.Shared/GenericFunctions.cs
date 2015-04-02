@@ -27,7 +27,7 @@ static class GenericCodeClass
     private static string HomeStationCode;
     private static string HomeProvince;
     private static bool IsCanadaSelected;
-    private static bool IsECLightningDataSelected = false;
+    private static string TypeCode;
 
     //Provide access to private property specifying Loop timer Interval
     public static TimeSpan LoopInterval
@@ -100,6 +100,12 @@ static class GenericCodeClass
     {
         get { return IsCanadaSelected; }
         set { IsCanadaSelected = value; }
+    }
+
+    public static string TypeCodeString
+    {
+        get { return TypeCode; }
+        set { TypeCode = value; }
     }
 
     //public static DateTime GetDateTimeFromFile(string Filename)
@@ -325,29 +331,116 @@ static class GenericCodeClass
             }
         }
 
-        else if (HomeStationCodeString.Equals("NEPAC"))
+        if (HomeProvince.Equals("Lightning Map"))
         {
-            int i = 1;
-
-            switch (FileDownloadPeriod)
+            if (HomeStationCodeString.Equals("lightningARC"))
             {
-                case 3:
-                    i = 5;
-                    break;
-                case 6:
-                    i = 1;
-                    break;
-                case 1:
-                    i = 10;
-                    break;
+                GenericCodeClass.GetWeatherDataURLs(FileNames, 6);
+                return;
             }
-
-            for (; i <= 10; i++)
-                FileNames.Add(i.ToString() + ".jpg");
+            if (HomeStationCodeString.Equals("lightningATL"))
+            {
+                GenericCodeClass.GetWeatherDataURLs(FileNames, 6);
+                return;
+            }
+            if (HomeStationCodeString.Equals("lightningONT"))
+            {
+                GenericCodeClass.GetWeatherDataURLs(FileNames, 6);
+                return;
+            }
+            if (HomeStationCodeString.Equals("lightningPAC"))
+            {
+                GenericCodeClass.GetWeatherDataURLs(FileNames, 6);
+                return;
+            }
+            if (HomeStationCodeString.Equals("lightningWRN"))
+            {
+                GenericCodeClass.GetWeatherDataURLs(FileNames, 6);
+                return;
+            }
+            if (HomeStationCodeString.Equals("lightningQUE"))
+            {
+                GenericCodeClass.GetWeatherDataURLs(FileNames, 6);
+                return;
+            }
         }
+
+        if (HomeProvince.Equals("Graphical Area Forecasts"))
+        {
+            if (HomeStationCodeString.Equals("Arctic"))
+            {
+                if(TypeCodeString.Equals("Clouds &amp; Weather"))
+                {
+                    FileNames.Add("Latest-gfacn37_cldwx_000.png");
+                }
+            }
+            if (HomeStationCodeString.Equals("Atlantic"))
+            {
+
+            }
+            if (HomeStationCodeString.Equals("Nunavut"))
+            {
+
+            }
+            if (HomeStationCodeString.Equals("Ontario &amp; Quebec"))
+            {
+
+            }
+            if (HomeStationCodeString.Equals("Pacific"))
+            {
+
+            }
+            if (HomeStationCodeString.Equals("Prairies"))
+            {
+
+            }
+            if (HomeStationCodeString.Equals("Yukon &amp; NWT"))
+            {
+
+            }
+        }
+
+        //else if (HomeStationCodeString.Equals("NEPAC"))
+        //{
+        //    int i = 1;
+
+        //    switch (FileDownloadPeriod)
+        //    {
+        //        case 3:
+        //            i = 5;
+        //            break;
+        //        case 6:
+        //            i = 1;
+        //            break;
+        //        case 1:
+        //            i = 10;
+        //            break;
+        //    }
+
+        //    for (; i <= 10; i++)
+        //        FileNames.Add(i.ToString() + ".jpg");
+        //}
     }
     //Handle special cases end
     //}
+
+    public static void GetWeatherDataURLs(List<string> FileNames, int NoOfFiles)
+    {
+        DateTime CurrDateTime = DateTime.Now.ToUniversalTime();
+        int i;
+
+        //No need to save previous files as that is done in the function GetLatestFiles()
+
+        CurrDateTime = CurrDateTime.AddMinutes(-CurrDateTime.Minute % 10);
+
+        for (i = 0; i < NoOfFiles; i++)
+        {
+            FileNames.Add(CurrDateTime.Year.ToString() + CurrDateTime.Month.ToString("D2") + CurrDateTime.Day.ToString("D2") + CurrDateTime.Hour.ToString("D2") + CurrDateTime.Minute.ToString("D2") + ".png");
+            CurrDateTime = CurrDateTime.AddMinutes(-10);
+        }
+
+        FileNames.Reverse();
+    }
 
     public static async Task<int> GetFileUsingHttp(string URL, StorageFolder Folder, string FileName)
     {

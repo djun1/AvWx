@@ -16,7 +16,7 @@
     <City>Prairies</City>
     <City>Yukon &amp; NWT</City>
   </Province>
-  <Province Name ="Lightning">
+  <Province Name ="Lightning Map">
     <City>Arctic</City>
     <City>Atlantic</City>
     <City>Ontario</City>
@@ -29,7 +29,6 @@
     <City>Central Coast</City>
     <City>South Coast</City>
   </Province>
-  <Province Name ="Weather Cams">
-    
+  <Province Name ="Weather Cameras">
   </Province>
 </ProvinceCities>

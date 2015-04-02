@@ -33,21 +33,55 @@
     <BaseURL>https://flightplanning.navcanada.ca/Latest/lgf/anglais/produits/uprair/lgf/zvr/41/</BaseURL>
   </City>
   <City Name ="Arctic">
-    <CityCode>lightningArctic</CityCode>
+    <CityCode>lightningARC</CityCode>
+    <BaseURL>http://weather.gc.ca/data/lightning_images/ARC_</BaseURL>
   </City>
   <City Name ="Atlantic">
-    <CityCode>lightningAtlantic</CityCode>
+    <CityCode>lightningATL</CityCode>
+    <BaseURL>http://weather.gc.ca/data/lightning_images/ATL_</BaseURL>
   </City>
   <City Name ="Ontario">
-    <CityCode>lightningOntario</CityCode>
+    <CityCode>lightningONT</CityCode>
+    <BaseURL>http://weather.gc.ca/data/lightning_images/ONT_</BaseURL>
   </City>
   <City Name ="Pacific">
-    <CityCode>lightningPacific</CityCode>
+    <CityCode>lightningPAC</CityCode>
+    <BaseURL>http://weather.gc.ca/data/lightning_images/PAC_</BaseURL>
   </City>
   <City Name ="Prairies">
-    <CityCode>lightningPrairies</CityCode>
+    <CityCode>lightningWRN</CityCode>
+    <BaseURL>http://weather.gc.ca/data/lightning_images/WRN_</BaseURL>
   </City>
   <City Name ="Quebec">
-    <CityCode>lightningQuebec</CityCode>
+    <CityCode>lightningQUE</CityCode>
+    <BaseURL>http://weather.gc.ca/data/lightning_images/QUE_</BaseURL>
+  </City>
+  <City Name ="Pacific">
+    <CityCode>gfa31</CityCode>
+    <BaseURL>https://flightplanning.navcanada.ca/Latest/gfa/anglais/produits/uprair/gfa/gfacn31/</BaseURL>
+  </City>
+  <City Name ="Prairies">
+    <CityCode>gfa32</CityCode>
+    <BaseURL>https://flightplanning.navcanada.ca/Latest/gfa/anglais/produits/uprair/gfa/gfacn32/</BaseURL>
+  </City>
+  <City Name ="Ontario &amp; Quebec">
+    <CityCode>gfa33</CityCode>
+    <BaseURL>https://flightplanning.navcanada.ca/Latest/gfa/anglais/produits/uprair/gfa/gfacn33/</BaseURL>
+  </City>
+  <City Name ="Atlantic">
+    <CityCode>gfa34</CityCode>
+    <BaseURL>https://flightplanning.navcanada.ca/Latest/gfa/anglais/produits/uprair/gfa/gfacn34/</BaseURL>
+  </City>
+  <City Name ="Yukon &amp; NWT">
+    <CityCode>gfa35</CityCode>
+    <BaseURL>https://flightplanning.navcanada.ca/Latest/gfa/anglais/produits/uprair/gfa/gfacn35/</BaseURL>
+  </City>
+  <City Name ="Nunavut">
+    <CityCode>gfa36</CityCode>
+    <BaseURL>https://flightplanning.navcanada.ca/Latest/gfa/anglais/produits/uprair/gfa/gfacn36/</BaseURL>
+  </City>
+  <City Name ="Arctic">
+    <CityCode>gfa37</CityCode>
+    <BaseURL>https://flightplanning.navcanada.ca/Latest/gfa/anglais/produits/uprair/gfa/gfacn37/</BaseURL>
   </City>
 </Cities>
