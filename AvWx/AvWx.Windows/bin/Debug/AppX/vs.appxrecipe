@@ -20,13 +20,13 @@
     <AppXManifest Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Windows\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-04-01T06:11:11.271</Modified>
+      <Modified>2015-04-01T23:53:14.786</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Windows\bin\Debug\AvWx.Windows.exe">
       <PackagePath>AvWx.Windows.exe</PackagePath>
-      <Modified>2015-04-01T06:11:10.677</Modified>
+      <Modified>2015-04-02T01:04:36.943</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Windows\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>
@@ -50,11 +50,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Shared\CityCodes.xml">
       <PackagePath>CityCodes.xml</PackagePath>
-      <Modified>2015-03-29T06:09:51.819</Modified>
+      <Modified>2015-04-02T01:08:14.081</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Shared\ProvinceCities.xml">
       <PackagePath>ProvinceCities.xml</PackagePath>
-      <Modified>2015-03-29T06:09:51.832</Modified>
+      <Modified>2015-04-02T01:08:16.085</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Shared\USCityCodes.xml">
       <PackagePath>USCityCodes.xml</PackagePath>
@@ -66,31 +66,31 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Windows\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2015-04-01T06:11:10.411</Modified>
+      <Modified>2015-04-01T23:53:14.362</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Windows\bin\Debug\AboutText.xbf">
       <PackagePath>AboutText.xbf</PackagePath>
-      <Modified>2015-04-01T06:11:10.411</Modified>
+      <Modified>2015-04-01T23:53:14.395</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Windows\bin\Debug\HelpText.xbf">
       <PackagePath>HelpText.xbf</PackagePath>
-      <Modified>2015-04-01T06:11:10.411</Modified>
+      <Modified>2015-04-01T23:53:14.396</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Windows\bin\Debug\AboutPage.xbf">
       <PackagePath>AboutPage.xbf</PackagePath>
-      <Modified>2015-04-01T06:11:10.411</Modified>
+      <Modified>2015-04-01T23:53:14.387</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Windows\bin\Debug\HelpPage.xbf">
       <PackagePath>HelpPage.xbf</PackagePath>
-      <Modified>2015-04-01T06:11:10.411</Modified>
+      <Modified>2015-04-01T23:53:14.389</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Windows\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2015-04-01T06:11:10.411</Modified>
+      <Modified>2015-04-01T23:53:14.392</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Windows\bin\Debug\OptionsPage.xbf">
       <PackagePath>OptionsPage.xbf</PackagePath>
-      <Modified>2015-04-01T06:11:10.411</Modified>
+      <Modified>2015-04-01T23:53:14.392</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Windows\bin\Debug\AvWx.Windows.xr.xml">
       <PackagePath>AvWx.Windows.xr.xml</PackagePath>
@@ -98,7 +98,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Windows\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-04-01T06:11:11.114</Modified>
+      <Modified>2015-04-01T23:53:14.667</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

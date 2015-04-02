@@ -42,38 +42,38 @@ namespace AvWx
 
         private void SetOptions()
         {
-            bool IsPolarSelected = ProvinceComboBox.Items[ProvinceComboBox.SelectedIndex].Equals("Polar Imagery");
-            bool AreProvincesSelected = ProvinceComboBox.Items[ProvinceComboBox.SelectedIndex].Equals("British Columbia") ||
-                                        ProvinceComboBox.Items[ProvinceComboBox.SelectedIndex].Equals("Ontario") ||
-                                        ProvinceComboBox.Items[ProvinceComboBox.SelectedIndex].Equals("New Brunswick");
-            bool IsRegionalSelected = ProvinceComboBox.Items[ProvinceComboBox.SelectedIndex].Equals("Regional Imagery");
-		    bool IsNEPacSelected = StationComboBox.Items[StationComboBox.SelectedIndex].Equals("Northeast Pacific");
-            bool IsWestCanSelected = StationComboBox.Items[StationComboBox.SelectedIndex].Equals("Western Canada/USA");
+            //bool IsPolarSelected = ProvinceComboBox.Items[ProvinceComboBox.SelectedIndex].Equals("Polar Imagery");
+            //bool AreProvincesSelected = ProvinceComboBox.Items[ProvinceComboBox.SelectedIndex].Equals("British Columbia") ||
+            //                            ProvinceComboBox.Items[ProvinceComboBox.SelectedIndex].Equals("Ontario") ||
+            //                            ProvinceComboBox.Items[ProvinceComboBox.SelectedIndex].Equals("New Brunswick");
+            //bool IsRegionalSelected = ProvinceComboBox.Items[ProvinceComboBox.SelectedIndex].Equals("Regional Imagery");
+            //bool IsNEPacSelected = StationComboBox.Items[StationComboBox.SelectedIndex].Equals("Northeast Pacific");
+            //bool IsWestCanSelected = StationComboBox.Items[StationComboBox.SelectedIndex].Equals("Western Canada/USA");
 
-            //IR
-            ProductRadioButton1.IsEnabled = true;
-            //Rainbow
-            ProductRadioButton2.IsEnabled = !GenericCodeClass.CanadaSelected || (GenericCodeClass.CanadaSelected && AreProvincesSelected);
-            //RGB
-            ProductRadioButton3.IsEnabled = !GenericCodeClass.CanadaSelected || (GenericCodeClass.CanadaSelected && AreProvincesSelected);
-            //visible
-            ProductRadioButton4.IsEnabled = !GenericCodeClass.CanadaSelected || (GenericCodeClass.CanadaSelected && (IsPolarSelected || AreProvincesSelected)) || (GenericCodeClass.CanadaSelected && IsRegionalSelected && !IsWestCanSelected);
+            ////IR
+            //ProductRadioButton1.IsEnabled = true;
+            ////Rainbow
+            //ProductRadioButton2.IsEnabled = !GenericCodeClass.CanadaSelected || (GenericCodeClass.CanadaSelected && AreProvincesSelected);
+            ////RGB
+            //ProductRadioButton3.IsEnabled = !GenericCodeClass.CanadaSelected || (GenericCodeClass.CanadaSelected && AreProvincesSelected);
+            ////visible
+            //ProductRadioButton4.IsEnabled = !GenericCodeClass.CanadaSelected || (GenericCodeClass.CanadaSelected && (IsPolarSelected || AreProvincesSelected)) || (GenericCodeClass.CanadaSelected && IsRegionalSelected && !IsWestCanSelected);
             
-            ProductRadioButton1.IsChecked = (bool)ProductRadioButton1.IsChecked || (!(bool)ProductRadioButton4.IsChecked && !ProductRadioButton2.IsEnabled) || ((bool)ProductRadioButton4.IsChecked && !ProductRadioButton4.IsEnabled);
+            //ProductRadioButton1.IsChecked = (bool)ProductRadioButton1.IsChecked || (!(bool)ProductRadioButton4.IsChecked && !ProductRadioButton2.IsEnabled) || ((bool)ProductRadioButton4.IsChecked && !ProductRadioButton4.IsEnabled);
 
-            DurationRadioButton1.IsEnabled = !GenericCodeClass.CanadaSelected || (IsRegionalSelected || !IsPolarSelected || AreProvincesSelected);  //3h
-            DurationRadioButton2.IsEnabled = !GenericCodeClass.CanadaSelected || (IsRegionalSelected || !IsPolarSelected || AreProvincesSelected);  //6h
-            DurationRadioButton3.IsEnabled = true;  //Latest
-            DurationRadioButton3.IsChecked = (bool)DurationRadioButton3.IsChecked || !DurationRadioButton1.IsEnabled;
+            //DurationRadioButton1.IsEnabled = !GenericCodeClass.CanadaSelected || (IsRegionalSelected || !IsPolarSelected || AreProvincesSelected);  //3h
+            //DurationRadioButton2.IsEnabled = !GenericCodeClass.CanadaSelected || (IsRegionalSelected || !IsPolarSelected || AreProvincesSelected);  //6h
+            //DurationRadioButton3.IsEnabled = true;  //Latest
+            //DurationRadioButton3.IsChecked = (bool)DurationRadioButton3.IsChecked || !DurationRadioButton1.IsEnabled;
 
-            LoopTimerRadioButton1.IsEnabled = DurationRadioButton1.IsEnabled || DurationRadioButton2.IsEnabled;
-            LoopTimerRadioButton2.IsEnabled = DurationRadioButton1.IsEnabled || DurationRadioButton2.IsEnabled;
-            LoopTimerRadioButton3.IsEnabled = DurationRadioButton1.IsEnabled || DurationRadioButton2.IsEnabled;
+            //LoopTimerRadioButton1.IsEnabled = DurationRadioButton1.IsEnabled || DurationRadioButton2.IsEnabled;
+            //LoopTimerRadioButton2.IsEnabled = DurationRadioButton1.IsEnabled || DurationRadioButton2.IsEnabled;
+            //LoopTimerRadioButton3.IsEnabled = DurationRadioButton1.IsEnabled || DurationRadioButton2.IsEnabled;
 
-            if (GenericCodeClass.CanadaSelected)
-                ProductRadioButton2.Content = "Rainbow";
-            else
-                ProductRadioButton2.Content = "Aviation";
+            //if (GenericCodeClass.CanadaSelected)
+            //    ProductRadioButton2.Content = "Rainbow";
+            //else
+            //    ProductRadioButton2.Content = "Aviation";
 
         }
 
@@ -107,6 +107,8 @@ namespace AvWx
 
         private void OptionsPage_Unloaded(object sender, RoutedEventArgs e)
         {
+            //bool IsAnalysisSelected = ProvinceComboBox.Items[ProvinceComboBox.SelectedIndex].Equals("Analysis Charts");
+            //bool IsLGFSelected = ProvinceComboBox.Items[ProvinceComboBox.SelectedIndex].Equals("Local Graphic Forecasts (West Coast)");
             bool IsPolarSelected = ProvinceComboBox.Items[ProvinceComboBox.SelectedIndex].Equals("Polar Imagery");
             bool IsNEPacSelected = StationComboBox.Items[StationComboBox.SelectedIndex].Equals("Northeast Pacific");
             bool IsNWTerritoriesSelected = StationComboBox.Items[StationComboBox.SelectedIndex].Equals("Northwest Territories/Nunavut");

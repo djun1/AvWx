@@ -151,7 +151,7 @@ namespace AvWx
             {
                 //Show Error Message
                 //SetSystemImage("ms-appx:///Assets/Error.png");                
-                StatusBox.Text = "Error Downloading Images";
+                StatusBox.Text = "Error Downloading Images (navigationHelper_LoadState)";
                 ImgBox.Source = null;
             }
         }
@@ -255,7 +255,7 @@ namespace AvWx
                 if (RetCode == -1)
                 {
                     Files.Remove(Files[i].ToString());
-                    StatusBox.Text = "Error downloading files";
+                    StatusBox.Text = "Error downloading files (DownloadFiles)";
                     ImgBox.Source = null;
                 }
                 else
@@ -313,8 +313,8 @@ namespace AvWx
             if (Files.Count != 0 && ImageIndex >= 0 && ImageIndex <= Files.Count)
             {
                 BitmapImage img;
-                DateTime LocalTime = GenericCodeClass.GetDateTimeFromFile(Files[ImageIndex]);
-                StatusBox.Text = LocalTime.ToString("MMM dd HH:mm") + "   " + (ImageIndex + 1).ToString() + "/" + Files.Count.ToString() + " " + SatelliteProduct;
+                //DateTime LocalTime = GenericCodeClass.GetDateTimeFromFile(Files[ImageIndex]);
+                StatusBox.Text = (ImageIndex + 1).ToString() + "/" + Files.Count.ToString() + " " + SatelliteProduct;
 
                 img = await GenericCodeClass.GetBitmapImage(ImageFolder, Files[ImageIndex]);
 
@@ -329,7 +329,7 @@ namespace AvWx
             else
             {
                 //SetSystemImage("ms-appx:///Assets/Error.png");
-                StatusBox.Text = "Error Downloading Images";
+                StatusBox.Text = "Error Downloading Images (ChangeImage)";
                 ImgBox.Source = null;
             }
 
@@ -462,7 +462,7 @@ namespace AvWx
             {
                 //Show Error Message
                 //SetSystemImage("ms-appx:///Assets/Error.png");
-                StatusBox.Text = "Error Downloading Images";
+                StatusBox.Text = "Error Downloading Images (MainPage_SettingsChanged)";
                 ImgBox.Source = null;
             }
 

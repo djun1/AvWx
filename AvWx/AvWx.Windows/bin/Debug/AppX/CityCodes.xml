@@ -1,71 +1,53 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Cities>
-  <City Name ="Central British Columbia">
-    <CityCode>flt/t7</CityCode>
-    <BaseURL>http://www.ssd.noaa.gov/goes/{SC}/img/</BaseURL>
+  <City Name ="Surface">
+    <CityCode>surface</CityCode>
+    <BaseURL>https://flightplanning.navcanada.ca/Latest/anglais/produits/analyses/surface/</BaseURL>
   </City>
-  <City Name ="Eastern Canada/USA">
-    <CityCode>east/eaus</CityCode>
-    <BaseURL>http://www.ssd.noaa.gov/goes/{SC}/img/</BaseURL>
+  <City Name ="850 mb (5 000')">
+    <CityCode>850</CityCode>
+    <BaseURL>https://flightplanning.navcanada.ca/Latest/anglais/produits/analyses/altitude/</BaseURL>
   </City>
-  <City Name ="Northeast Pacific">
-    <CityCode>NEPAC</CityCode>
-    <BaseURL>http://www.goes.noaa.gov/GSSLOOPS/{OPTION}/</BaseURL>
+  <City Name ="700 mb (10 000')">
+    <CityCode>700</CityCode>
+    <BaseURL>https://flightplanning.navcanada.ca/Latest/anglais/produits/analyses/altitude/</BaseURL>
   </City>
-  <City Name ="Northern Great Lakes">
-    <CityCode>east/ff2</CityCode>
-    <BaseURL>http://www.ssd.noaa.gov/goes/{SC}/img/</BaseURL>
+  <City Name ="500 mb (18 000')">
+    <CityCode>500</CityCode>
+    <BaseURL>https://flightplanning.navcanada.ca/Latest/anglais/produits/analyses/altitude/</BaseURL>
   </City>
-  <City Name ="Prairies/Central Canada">
-    <CityCode>east/ff1</CityCode>
-    <BaseURL>http://www.ssd.noaa.gov/goes/{SC}/img/</BaseURL>
+  <City Name ="250 mb (34 000')">
+    <CityCode>250</CityCode>
+    <BaseURL>https://flightplanning.navcanada.ca/Latest/anglais/produits/analyses/altitude/</BaseURL>
   </City>
-  <City Name ="Southern Ontario">
-    <CityCode>east/gl</CityCode>
-    <BaseURL>http://www.ssd.noaa.gov/goes/{SC}/img/</BaseURL>
+  <City Name ="North Coast">
+    <CityCode>north</CityCode>
+    <BaseURL>https://flightplanning.navcanada.ca/Latest/lgf/anglais/produits/uprair/lgf/zvr/43/</BaseURL>
   </City>
-  <City Name ="Southern Quebec">
-    <CityCode>east/ne</CityCode>
-    <BaseURL>http://www.ssd.noaa.gov/goes/{SC}/img/</BaseURL>
+  <City Name ="Central Coast">
+    <CityCode>central</CityCode>
+    <BaseURL>https://flightplanning.navcanada.ca/Latest/lgf/anglais/produits/uprair/lgf/zvr/42/</BaseURL>
   </City>
-  <City Name ="Western Canada/USA">
-    <CityCode>WEST_CAN_USA</CityCode>
-    <BaseURL>http://www.atmos.washington.edu/images/ir4km/</BaseURL>
+  <City Name ="South Coast">
+    <CityCode>south</CityCode>
+    <BaseURL>https://flightplanning.navcanada.ca/Latest/lgf/anglais/produits/uprair/lgf/zvr/41/</BaseURL>
   </City>
-  <City Name ="Yukon">
-    <CityCode>west/ak</CityCode>
-    <BaseURL>http://www.ssd.noaa.gov/goes/{SC}/img/</BaseURL>
+  <City Name ="Arctic">
+    <CityCode>lightningArctic</CityCode>
   </City>
-  <City Name ="Vancouver">
-    <CityCode>west/vanc</CityCode>
-    <BaseURL>http://www.ssd.noaa.gov/goes/{SC}/img/</BaseURL>
+  <City Name ="Atlantic">
+    <CityCode>lightningAtlantic</CityCode>
   </City>
-  <City Name ="St. John">
-    <CityCode>east/wfo/car</CityCode>
-    <BaseURL>http://www.ssd.noaa.gov/goes/{SC}/img/</BaseURL>
+  <City Name ="Ontario">
+    <CityCode>lightningOntario</CityCode>
   </City>
-  <City Name ="Sault Ste. Marie">
-    <CityCode>east/wfo/apx</CityCode>
-    <BaseURL>http://www.ssd.noaa.gov/goes/{SC}/img/</BaseURL>
+  <City Name ="Pacific">
+    <CityCode>lightningPacific</CityCode>
   </City>
-  <City Name ="Thunder Bay">
-    <CityCode>east/wfo/dlh</CityCode>
-    <BaseURL>http://www.ssd.noaa.gov/goes/{SC}/img/</BaseURL>
+  <City Name ="Prairies">
+    <CityCode>lightningPrairies</CityCode>
   </City>
-  <City Name ="Toronto">
-    <CityCode>east/wfo/buf</CityCode>
-    <BaseURL>http://www.ssd.noaa.gov/goes/{SC}/img/</BaseURL>
-  </City>
-  <City Name ="Hudson Bay">
-    <CityCode>HUDSON_BAY</CityCode>
-    <BaseURL>http://weather.gc.ca/data/satellite/</BaseURL>
-  </City>
-  <City Name ="Northwest Territories/Nunavut">
-    <CityCode>NW_TERRITORIES</CityCode>
-    <BaseURL>http://weather.gc.ca/data/satellite/</BaseURL>
-  </City>
-  <City Name ="Yukon ">
-    <CityCode>YUKON </CityCode>
-    <BaseURL>http://weather.gc.ca/data/satellite/</BaseURL>
+  <City Name ="Quebec">
+    <CityCode>lightningQuebec</CityCode>
   </City>
 </Cities>
