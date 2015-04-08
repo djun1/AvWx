@@ -1,121 +1,121 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Machine>DANIEL-LAPTOP</Machine>
+    <Machine>DANIEL-DESKTOP</Machine>
     <WindowsUser>Daniel</WindowsUser>
     <TargetPlatformIdentifier>WindowsPhoneApp</TargetPlatformIdentifier>
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
     <PackageIdentityName>239daf75-5746-444e-9d47-112f1c6bb9d3</PackageIdentityName>
-    <IntermediateOutputPath>C:\Users\Daniel\SkyDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\obj\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\obj\Debug\</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\Daniel\SkyDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\bin\Debug\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\Daniel\SkyDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\bin\Debug\AvWx.WindowsPhone.exe">
+    <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\bin\Debug\AvWx.WindowsPhone.exe">
       <PackagePath>AvWx.WindowsPhone.exe</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Daniel\SkyDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\Assets\Logo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Daniel\SkyDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\Assets\Logo.scale-140.png">
+    <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\Assets\Logo.scale-140.png">
       <PackagePath>Assets\Logo.scale-140.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Daniel\SkyDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\Assets\Logo.scale-240.png">
+    <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\Assets\Logo.scale-240.png">
       <PackagePath>Assets\Logo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Daniel\SkyDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\Assets\SplashScreen.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\Assets\SplashScreen.scale-100.png">
       <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Daniel\SkyDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\Assets\SplashScreen.scale-140.png">
+    <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\Assets\SplashScreen.scale-140.png">
       <PackagePath>Assets\SplashScreen.scale-140.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Daniel\SkyDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\Assets\SplashScreen.scale-240.png">
+    <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\Assets\SplashScreen.scale-240.png">
       <PackagePath>Assets\SplashScreen.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Daniel\SkyDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\Assets\Square44x44Logo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\Assets\Square44x44Logo.scale-100.png">
       <PackagePath>Assets\Square44x44Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Daniel\SkyDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\Assets\Square44x44Logo.scale-140.png">
+    <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\Assets\Square44x44Logo.scale-140.png">
       <PackagePath>Assets\Square44x44Logo.scale-140.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Daniel\SkyDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\Assets\Square44x44Logo.scale-240.png">
+    <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\Assets\Square44x44Logo.scale-240.png">
       <PackagePath>Assets\Square44x44Logo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Daniel\SkyDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\Assets\Square71x71Logo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\Assets\Square71x71Logo.scale-100.png">
       <PackagePath>Assets\Square71x71Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Daniel\SkyDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\Assets\Square71x71Logo.scale-140.png">
+    <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\Assets\Square71x71Logo.scale-140.png">
       <PackagePath>Assets\Square71x71Logo.scale-140.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Daniel\SkyDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\Assets\Square71x71Logo.scale-240.png">
+    <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\Assets\Square71x71Logo.scale-240.png">
       <PackagePath>Assets\Square71x71Logo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Daniel\SkyDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\Assets\StoreLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\Assets\StoreLogo.scale-100.png">
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Daniel\SkyDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\Assets\StoreLogo.scale-140.png">
+    <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\Assets\StoreLogo.scale-140.png">
       <PackagePath>Assets\StoreLogo.scale-140.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Daniel\SkyDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\Assets\StoreLogo.scale-240.png">
+    <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\Assets\StoreLogo.scale-240.png">
       <PackagePath>Assets\StoreLogo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Daniel\SkyDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Shared\CityCodes.xml">
+    <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Shared\CityCodes.xml">
       <PackagePath>CityCodes.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Daniel\SkyDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Shared\ProvinceCities.xml">
+    <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Shared\ProvinceCities.xml">
       <PackagePath>ProvinceCities.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Daniel\SkyDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Shared\USCityCodes.xml">
+    <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Shared\USCityCodes.xml">
       <PackagePath>USCityCodes.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Daniel\SkyDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Shared\USStateCities.xml">
+    <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Shared\USStateCities.xml">
       <PackagePath>USStateCities.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Daniel\SkyDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\bin\Debug\App.xbf">
+    <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Daniel\SkyDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\bin\Debug\AboutText.xbf">
+    <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\bin\Debug\AboutText.xbf">
       <PackagePath>AboutText.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Daniel\SkyDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\bin\Debug\HelpText.xbf">
+    <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\bin\Debug\HelpText.xbf">
       <PackagePath>HelpText.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Daniel\SkyDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\bin\Debug\AboutPage.xbf">
+    <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\bin\Debug\AboutPage.xbf">
       <PackagePath>AboutPage.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Daniel\SkyDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\bin\Debug\HelpPage.xbf">
+    <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\bin\Debug\HelpPage.xbf">
       <PackagePath>HelpPage.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Daniel\SkyDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\bin\Debug\MainPage.xbf">
+    <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Daniel\SkyDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\bin\Debug\OptionsPage.xbf">
+    <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\bin\Debug\OptionsPage.xbf">
       <PackagePath>OptionsPage.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Daniel\SkyDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\bin\Debug\AvWx.WindowsPhone.xr.xml">
+    <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\bin\Debug\AvWx.WindowsPhone.xr.xml">
       <PackagePath>AvWx.WindowsPhone.xr.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Daniel\SkyDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\bin\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.WindowsPhone\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>

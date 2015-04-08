@@ -369,10 +369,18 @@ static class GenericCodeClass
         {
             if (HomeStationCodeString.Equals("Arctic"))
             {
-                if(TypeCodeString.Equals("Clouds &amp; Weather"))
+                if (TypeCodeString.Equals("Clouds &amp; Weather"))
                 {
                     FileNames.Add("Latest-gfacn37_cldwx_000.png");
+                    //FileNames.Add("Latest-gfacn37_cldwx_006.png");
+                    //FileNames.Add("Latest-gfacn37_cldwx_012.png");
                 }
+                //if (TypeCodeString.Equals("Icing, Turbulence &amp; Freezing Level"))
+                //{
+                //    FileNames.Add("Latest-gfacn37_turbc_000.png");
+                //    FileNames.Add("Latest-gfacn37_turbc_006.png");
+                //    FileNames.Add("Latest-gfacn37_turbc_012.png");
+                //}
             }
             if (HomeStationCodeString.Equals("Atlantic"))
             {
