@@ -20,175 +20,167 @@
     <AppXManifest Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Windows\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-04-08T03:30:59.009</Modified>
+      <Modified>2015-06-24T06:20:03.085</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Windows\bin\Debug\AvWx.Windows.exe">
       <PackagePath>AvWx.Windows.exe</PackagePath>
-      <Modified>2015-04-08T03:30:57.994</Modified>
+      <Modified>2015-06-24T06:33:20.236</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Windows\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-04-04T23:31:53.178</Modified>
+      <Modified>2015-04-04T23:31:53.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Windows\Assets\Logo.scale-140.png">
       <PackagePath>Assets\Logo.scale-140.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-04-04T23:31:53.187</Modified>
+      <Modified>2015-04-04T23:31:53.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Windows\Assets\Logo.scale-180.png">
       <PackagePath>Assets\Logo.scale-180.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-04-04T23:31:53.197</Modified>
+      <Modified>2015-04-04T23:31:53.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Windows\Assets\Logo.scale-80.png">
       <PackagePath>Assets\Logo.scale-80.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-04-04T23:31:53.206</Modified>
+      <Modified>2015-04-04T23:31:53.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Windows\Assets\SmallLogo.scale-100.png">
       <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-04-04T23:31:53.216</Modified>
+      <Modified>2015-04-04T23:31:53.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Windows\Assets\SmallLogo.scale-140.png">
       <PackagePath>Assets\SmallLogo.scale-140.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-04-04T23:31:53.265</Modified>
+      <Modified>2015-04-04T23:31:53.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Windows\Assets\SmallLogo.scale-180.png">
       <PackagePath>Assets\SmallLogo.scale-180.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-04-04T23:31:53.274</Modified>
+      <Modified>2015-04-04T23:31:53.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Windows\Assets\SmallLogo.scale-80.png">
       <PackagePath>Assets\SmallLogo.scale-80.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-04-04T23:31:53.284</Modified>
+      <Modified>2015-04-04T23:31:53.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Windows\Assets\SplashScreen.scale-100.png">
       <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-04-04T23:31:53.293</Modified>
+      <Modified>2015-04-04T23:31:53.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Windows\Assets\SplashScreen.scale-140.png">
       <PackagePath>Assets\SplashScreen.scale-140.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-04-04T23:31:53.302</Modified>
+      <Modified>2015-04-04T23:31:53.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Windows\Assets\SplashScreen.scale-180.png">
       <PackagePath>Assets\SplashScreen.scale-180.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-04-04T23:31:53.311</Modified>
+      <Modified>2015-04-04T23:31:53.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Windows\Assets\Square70x70Logo.scale-100.png">
       <PackagePath>Assets\Square70x70Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-04-04T23:31:53.320</Modified>
+      <Modified>2015-04-04T23:31:53.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Windows\Assets\Square70x70Logo.scale-140.png">
       <PackagePath>Assets\Square70x70Logo.scale-140.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-04-04T23:31:53.329</Modified>
+      <Modified>2015-04-04T23:31:53.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Windows\Assets\Square70x70Logo.scale-180.png">
       <PackagePath>Assets\Square70x70Logo.scale-180.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-04-04T23:31:53.338</Modified>
+      <Modified>2015-04-04T23:31:53.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Windows\Assets\Square70x70Logo.scale-80.png">
       <PackagePath>Assets\Square70x70Logo.scale-80.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-04-04T23:31:53.347</Modified>
+      <Modified>2015-04-04T23:31:53.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Windows\Assets\StoreLogo.scale-100.png">
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-04-04T23:31:53.356</Modified>
+      <Modified>2015-04-04T23:31:53.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Windows\Assets\StoreLogo.scale-140.png">
       <PackagePath>Assets\StoreLogo.scale-140.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-04-04T23:31:53.365</Modified>
+      <Modified>2015-04-04T23:31:53.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Windows\Assets\StoreLogo.scale-180.png">
       <PackagePath>Assets\StoreLogo.scale-180.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-04-04T23:31:53.374</Modified>
+      <Modified>2015-04-04T23:31:53.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Windows\Assets\Wide310x150Logo.scale-100.png">
       <PackagePath>Assets\Wide310x150Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-04-04T23:31:53.383</Modified>
+      <Modified>2015-04-04T23:31:53.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Windows\Assets\Wide310x150Logo.scale-140.png">
       <PackagePath>Assets\Wide310x150Logo.scale-140.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-04-04T23:31:53.391</Modified>
+      <Modified>2015-04-04T23:31:53.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Windows\Assets\Wide310x150Logo.scale-180.png">
       <PackagePath>Assets\Wide310x150Logo.scale-180.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-04-04T23:31:53.400</Modified>
+      <Modified>2015-04-04T23:31:53.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Windows\Assets\Wide310x150Logo.scale-80.png">
       <PackagePath>Assets\Wide310x150Logo.scale-80.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-04-04T23:31:53.409</Modified>
+      <Modified>2015-04-04T23:31:53.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Shared\CityCodes.xml">
       <PackagePath>CityCodes.xml</PackagePath>
-      <Modified>2015-04-02T02:44:40.728</Modified>
+      <Modified>2015-04-02T02:44:40.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Shared\ProvinceCities.xml">
       <PackagePath>ProvinceCities.xml</PackagePath>
-      <Modified>2015-04-02T02:49:41.330</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Shared\USCityCodes.xml">
-      <PackagePath>USCityCodes.xml</PackagePath>
-      <Modified>2015-03-29T06:09:51.835</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Shared\USStateCities.xml">
-      <PackagePath>USStateCities.xml</PackagePath>
-      <Modified>2015-03-29T06:09:51.836</Modified>
+      <Modified>2015-04-02T02:49:41.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Windows\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2015-04-08T03:30:57.760</Modified>
+      <Modified>2015-04-08T03:30:57.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Windows\bin\Debug\AboutText.xbf">
       <PackagePath>AboutText.xbf</PackagePath>
-      <Modified>2015-04-08T03:30:57.791</Modified>
+      <Modified>2015-04-08T03:30:57.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Windows\bin\Debug\HelpText.xbf">
       <PackagePath>HelpText.xbf</PackagePath>
-      <Modified>2015-04-08T03:30:57.791</Modified>
+      <Modified>2015-04-08T03:30:57.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Windows\bin\Debug\AboutPage.xbf">
       <PackagePath>AboutPage.xbf</PackagePath>
-      <Modified>2015-04-08T03:30:57.760</Modified>
+      <Modified>2015-04-08T03:30:57.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Windows\bin\Debug\HelpPage.xbf">
       <PackagePath>HelpPage.xbf</PackagePath>
-      <Modified>2015-04-08T03:30:57.760</Modified>
+      <Modified>2015-04-08T03:30:57.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Windows\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2015-04-08T03:30:57.760</Modified>
+      <Modified>2015-04-08T03:30:57.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Windows\bin\Debug\OptionsPage.xbf">
       <PackagePath>OptionsPage.xbf</PackagePath>
-      <Modified>2015-04-08T03:30:57.791</Modified>
+      <Modified>2015-06-24T06:20:02.680</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Windows\bin\Debug\AvWx.Windows.xr.xml">
       <PackagePath>AvWx.Windows.xr.xml</PackagePath>
-      <Modified>2015-04-08T03:30:57.463</Modified>
+      <Modified>2015-04-08T03:30:57.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Windows\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-04-08T03:30:58.384</Modified>
+      <Modified>2015-06-24T06:20:02.973</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

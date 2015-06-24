@@ -26,7 +26,7 @@ static class GenericCodeClass
     private static string SatelliteType;
     private static string HomeStationCode;
     private static string HomeProvince;
-    private static bool IsCanadaSelected;
+    //private static bool IsCanadaSelected;
     private static string TypeCode;
 
     //Provide access to private property specifying Loop timer Interval
@@ -96,11 +96,11 @@ static class GenericCodeClass
         set { HomeProvince = value; }
     }
 
-    public static bool CanadaSelected
-    {
-        get { return IsCanadaSelected; }
-        set { IsCanadaSelected = value; }
-    }
+    //public static bool CanadaSelected
+    //{
+    //    get { return IsCanadaSelected; }
+    //    set { IsCanadaSelected = value; }
+    //}
 
     public static string TypeCodeString
     {
@@ -593,7 +593,7 @@ static class GenericCodeClass
                 RoamingSettings.Values["HomeProvince"] = HomeProvince;
                 RoamingSettings.Values["DownloadPeriod"] = DownloadPeriod;
                 RoamingSettings.Values["LoopTimerInterval"] = LoopTimerInterval.Milliseconds;
-                RoamingSettings.Values["IsCanadaSelected"] = IsCanadaSelected;
+                //RoamingSettings.Values["IsCanadaSelected"] = IsCanadaSelected;
             }
 
             RoamingSettings.Values["IsLoopPaused"] = GenericCodeClass.IsLoopPaused;
@@ -617,7 +617,7 @@ static class GenericCodeClass
                 HomeStationCode = RoamingSettings.Values["HomeStationCode"].ToString();
                 HomeProvince = RoamingSettings.Values["HomeProvince"].ToString();
                 IsLoopPaused = (bool)RoamingSettings.Values["IsLoopPaused"];
-                IsCanadaSelected = (bool)RoamingSettings.Values["IsCanadaSelected"];
+                //IsCanadaSelected = (bool)RoamingSettings.Values["IsCanadaSelected"];
 
             }
             catch (Exception e)
@@ -629,7 +629,7 @@ static class GenericCodeClass
                 SatelliteType = "vis";
                 HomeStationCode = "surface";
                 HomeProvince = "Analysis Charts";
-                IsCanadaSelected = true;
+                //IsCanadaSelected = true;
             }
         }
     }

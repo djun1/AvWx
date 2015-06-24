@@ -126,13 +126,13 @@ namespace AvWx
                 else
                     ChosenSatelliteType = "ir4";
             }
-            else if (ProductRadioButton2.IsChecked == true)
-            {
-                if (GenericCodeClass.CanadaSelected)
-                    ChosenSatelliteType = "rb";
-                else
-                    ChosenSatelliteType = "avn";
-            }
+            //else if (ProductRadioButton2.IsChecked == true)
+            //{
+            //    if (GenericCodeClass.CanadaSelected)
+            //        ChosenSatelliteType = "rb";
+            //    else
+            //        ChosenSatelliteType = "avn";
+            //}
             else if (ProductRadioButton3.IsChecked == true)
             {
                 ChosenSatelliteType = "rgb";
@@ -244,26 +244,26 @@ namespace AvWx
                     break;
             }
 
-            CountryRadioButton1.IsChecked = GenericCodeClass.CanadaSelected;
-            CountryRadioButton2.IsChecked = !GenericCodeClass.CanadaSelected;
+            //CountryRadioButton1.IsChecked = GenericCodeClass.CanadaSelected;
+            //CountryRadioButton2.IsChecked = !GenericCodeClass.CanadaSelected;
 
-            if (GenericCodeClass.CanadaSelected)
-            {
-                ProvincialCityXML.SetSourceFile("ProvinceCities.xml");
-                CityCodeXML.SetSourceFile("CityCodes.xml");
-            }
-            else
-            {
-                ProvincialCityXML.SetSourceFile("USStateCities.xml");
-                CityCodeXML.SetSourceFile("USCityCodes.xml");
-            }
+            //if (GenericCodeClass.CanadaSelected)
+            //{
+            //    ProvincialCityXML.SetSourceFile("ProvinceCities.xml");
+            //    CityCodeXML.SetSourceFile("CityCodes.xml");
+            //}
+            //else
+            //{
+            //    ProvincialCityXML.SetSourceFile("USStateCities.xml");
+            //    CityCodeXML.SetSourceFile("USCityCodes.xml");
+            //}
 
             PopulateProvinceBox(true);
             PopulateStationBox(ProvinceComboBox.SelectedIndex, ProvinceComboBox.Items[ProvinceComboBox.SelectedIndex].ToString(), true);
             SetOptions();
             
-            CountryRadioButton1.Checked += CountryRadioButton_CheckedHandler;
-            CountryRadioButton2.Checked += CountryRadioButton_CheckedHandler;
+            //CountryRadioButton1.Checked += CountryRadioButton_CheckedHandler;
+            //CountryRadioButton2.Checked += CountryRadioButton_CheckedHandler;
         }
 
         private void PopulateStationBox(int ProvinceBoxIndex, string ProvinceName, bool UseHomeStationValue)
@@ -288,37 +288,40 @@ namespace AvWx
                     }
                 }
 
+                
                 if (UseHomeStationValue)
                     StationComboBox.SelectedItem = GenericCodeClass.HomeStationName;
                 else
                     StationComboBox.SelectedIndex = 0;
                 StationComboBox.SelectionChanged += StationComboBox_SelectionChanged;
             }
+
+
         }
 
-        private void CountryRadioButton_CheckedHandler(object sender, RoutedEventArgs e)
-        {
-            if (sender == CountryRadioButton1)
-            {
-                if (GenericCodeClass.CanadaSelected)
-                    return;
-                ProvincialCityXML.SetSourceFile("ProvinceCities.xml");
-                CityCodeXML.SetSourceFile("CityCodes.xml");
-                GenericCodeClass.CanadaSelected = true;
-            }
-            else if (sender == CountryRadioButton2)
-            {
-                if (!GenericCodeClass.CanadaSelected)
-                    return;
-                ProvincialCityXML.SetSourceFile("USStateCities.xml");
-                CityCodeXML.SetSourceFile("USCityCodes.xml");
-                GenericCodeClass.CanadaSelected = false;
-            }
+        //private void CountryRadioButton_CheckedHandler(object sender, RoutedEventArgs e)
+        //{
+        //    if (sender == CountryRadioButton1)
+        //    {
+        //        if (GenericCodeClass.CanadaSelected)
+        //            return;
+        //        ProvincialCityXML.SetSourceFile("ProvinceCities.xml");
+        //        CityCodeXML.SetSourceFile("CityCodes.xml");
+        //        GenericCodeClass.CanadaSelected = true;
+        //    }
+        //    else if (sender == CountryRadioButton2)
+        //    {
+        //        if (!GenericCodeClass.CanadaSelected)
+        //            return;
+        //        ProvincialCityXML.SetSourceFile("USStateCities.xml");
+        //        CityCodeXML.SetSourceFile("USCityCodes.xml");
+        //        GenericCodeClass.CanadaSelected = false;
+        //    }
 
 
-            PopulateProvinceBox(false);
+        //    PopulateProvinceBox(false);
 
-        }
+        //}
 
         private void PopulateProvinceBox(bool UseHomeStationVlaue)
         {

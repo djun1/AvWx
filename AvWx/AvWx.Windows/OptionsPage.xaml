@@ -18,21 +18,19 @@
         <!-- Content Section 1-->
         <StackPanel Style="{StaticResource SettingsFlyoutSectionStyle}">
             <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="Station" />
-            <Grid Margin="0,12,0,0">
+            <!--<Grid Margin="0,12,0,0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <RadioButton x:Name="CountryRadioButton1" Grid.Column="0" Content="Canada" GroupName="CountryBoxes" />
                 <RadioButton x:Name="CountryRadioButton2" Grid.Column="1" Content="USA" GroupName="CountryBoxes" />
-            </Grid>
+            </Grid>-->
             <ComboBox x:Name="ProvinceComboBox" Margin="0,12,0,0" Padding="10,0,27,0" SelectionChanged="ProvinceComboBox_SelectionChanged" SelectedIndex="0">
                 <x:String></x:String>
             </ComboBox>
             <ComboBox x:Name="StationComboBox" Margin="0,12,0,0" Padding="10,0,27,0"/>
             <ComboBox x:Name="TypeComboBox" Margin="0,12,0,0" Padding="10,0,27,0">
-                <x:String>Clouds &amp; Weather</x:String>
-                <x:String>Icing, Turbulence &amp; Freezing Level</x:String>
             </ComboBox>
 
             <TextBlock Style="{StaticResource TitleTextBlockStyle}" x:Name="ProductName" Text="Satellite Product" Margin="0,24,0,0"/>

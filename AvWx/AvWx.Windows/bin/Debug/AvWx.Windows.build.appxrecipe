@@ -113,12 +113,6 @@
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Shared\ProvinceCities.xml">
       <PackagePath>ProvinceCities.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Shared\USCityCodes.xml">
-      <PackagePath>USCityCodes.xml</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Shared\USStateCities.xml">
-      <PackagePath>USStateCities.xml</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Daniel\OneDrive\Ashwin\Visual Studio\AvWx\AvWx\AvWx.Windows\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
     </AppxPackagedFile>
