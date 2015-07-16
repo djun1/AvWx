@@ -5,6 +5,25 @@ ehthumbs.db
 # Folder config file
 Desktop.ini
 
+#################
+## Eclipse
+#################
+
+*.pydevproject
+.project
+.metadata
+bin/
+tmp/
+obj/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
 
