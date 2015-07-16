@@ -26,7 +26,7 @@ static class GenericCodeClass
     private static string SatelliteType;
     private static string HomeStationCode;
     private static string HomeProvince;
-    //private static bool IsCanadaSelected;
+    private static bool IsCanadaSelected;
     private static string TypeCode;
 
     //Provide access to private property specifying Loop timer Interval
@@ -96,11 +96,11 @@ static class GenericCodeClass
         set { HomeProvince = value; }
     }
 
-    //public static bool CanadaSelected
-    //{
-    //    get { return IsCanadaSelected; }
-    //    set { IsCanadaSelected = value; }
-    //}
+    public static bool CanadaSelected
+    {
+        get { return IsCanadaSelected; }
+        set { IsCanadaSelected = value; }
+    }
 
     public static string TypeCodeString
     {
