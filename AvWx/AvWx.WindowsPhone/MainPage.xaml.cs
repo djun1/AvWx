@@ -86,39 +86,39 @@ namespace AvWx
 
             GetFileNamesTask = GenericCodeClass.GetListOfLatestFiles(Files);
             SetNavigationButtonState(GenericCodeClass.IsLoopPaused, false);
-            StationBox.Text = GenericCodeClass.HomeStationName;
+            StationBox.Text = GenericCodeClass.ChosenProductString;
 
-            if (GenericCodeClass.HomeStationChanged == true)
+            if (GenericCodeClass.SettingsChanged == true)
                 await GenericCodeClass.DeleteFiles(ImageFolder, null, true);
 
             await GetFileNamesTask;
 
             DownloadFilesTask = DownloadFiles();
 
-            switch (GenericCodeClass.SatelliteTypeString)
-            {
-                case "ir4":
-                case "alir":
-                case "1070":
-                case "03":
-                    SatelliteProduct = "Infrared";
-                    break;
-                case "rb":
-                    SatelliteProduct = "Rainbow";
-                    break;
-                case "avn":
-                    SatelliteProduct = "Aviation";
-                    break;
-                case "rgb":
-                    SatelliteProduct = "RGB";
-                    break;
-                case "vis":
-                case "alvs":
-                case "visible":
-                case "nir":
-                    SatelliteProduct = "Visible";
-                    break;
-            }
+            //switch (GenericCodeClass.SatelliteTypeString)
+            //{
+            //    case "ir4":
+            //    case "alir":
+            //    case "1070":
+            //    case "03":
+            //        SatelliteProduct = "Infrared";
+            //        break;
+            //    case "rb":
+            //        SatelliteProduct = "Rainbow";
+            //        break;
+            //    case "avn":
+            //        SatelliteProduct = "Aviation";
+            //        break;
+            //    case "rgb":
+            //        SatelliteProduct = "RGB";
+            //        break;
+            //    case "vis":
+            //    case "alvs":
+            //    case "visible":
+            //    case "nir":
+            //        SatelliteProduct = "Visible";
+            //        break;
+            //}
 
             LoopTimer.Interval = GenericCodeClass.LoopInterval; //Create a timer that trigger every 1 s
             DownloadTimer.Interval = GenericCodeClass.DownloadInterval; //Create a timer that triggers every 30 min
@@ -135,7 +135,7 @@ namespace AvWx
                     if (GenericCodeClass.FileDownloadPeriod != 0)
                         SetNavigationButtonState(GenericCodeClass.IsLoopPaused, true);
 
-                    if (GenericCodeClass.HomeStationChanged == false)
+                    if (GenericCodeClass.SettingsChanged == false)
                         DownloadTimer.Start();
                 }
             }
@@ -147,7 +147,7 @@ namespace AvWx
                 ImgBox.Source = null;
             }           
 
-            GenericCodeClass.HomeStationChanged = false;
+            GenericCodeClass.SettingsChanged = false;
         }
 
         /// <summary>
@@ -244,7 +244,7 @@ namespace AvWx
 
             for (i = 0; i < Files.Count; i++)
             {
-                if (GenericCodeClass.ExistingFiles.Contains(Files[i].ToString()) && GenericCodeClass.HomeStationChanged == false)
+                if (GenericCodeClass.ExistingFiles.Contains(Files[i].ToString()) && GenericCodeClass.SettingsChanged == false)
                     continue;
 
                 StatusBox.Text = "Downloading image " + DownloadedFiles.ToString() + "/" + Files.Count.ToString(); ;
@@ -260,10 +260,10 @@ namespace AvWx
                 else
                 {
                     BitmapImage img = await GenericCodeClass.GetBitmapImage(ImageFolder, Files[i]);
-                    if (GenericCodeClass.HomeStationCodeString.Equals("WEST_CAN_USA") || GenericCodeClass.HomeProvinceName.Equals("Polar Imagery"))
-                        ImgBox.Height = img.PixelHeight; //Change the factor to scale the sizes of the western Canada and polar images.
+                    //if (GenericCodeClass.HomeStationCodeString.Equals("WEST_CAN_USA") || GenericCodeClass.HomeProvinceName.Equals("Polar Imagery"))
+                    //    ImgBox.Height = img.PixelHeight; //Change the factor to scale the sizes of the western Canada and polar images.
                     //Currently set to 70% of the image height.
-                    else
+                    //else
                         ImgBox.Height = img.PixelHeight;
 
                     ImgBox.Source = img; 
@@ -311,10 +311,10 @@ namespace AvWx
                 //DateTime LocalTime = GenericCodeClass.GetDateTimeFromFile(Files[ImageIndex]);
                 StatusBox.Text = (ImageIndex + 1).ToString() + "/" + Files.Count.ToString() + " " + SatelliteProduct;
 
-                if (GenericCodeClass.HomeStationCodeString.Equals("WEST_CAN_USA") || GenericCodeClass.HomeProvinceName.Equals("Polar Imagery"))
-                    ImgBox.Height = 0.7 * img.PixelHeight; //Change the factor to scale the sizes of the western Canada and polar images.
-                //Currently set to 70% of the image height.
-                else
+                //if (GenericCodeClass.HomeStationCodeString.Equals("WEST_CAN_USA") || GenericCodeClass.HomeProvinceName.Equals("Polar Imagery"))
+                //    ImgBox.Height = 0.7 * img.PixelHeight; //Change the factor to scale the sizes of the western Canada and polar images.
+                ////Currently set to 70% of the image height.
+                //else
                     ImgBox.Height = img.PixelHeight;
 
                 ImgBox.Source = img; 

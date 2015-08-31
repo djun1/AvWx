@@ -101,36 +101,36 @@ namespace AvWx
             if (!GenericCodeClass.IsAppResuming)
                 await GenericCodeClass.DeleteFiles(ImageFolder, null, true);
 
-            StationBox.Text = GenericCodeClass.HomeStationName;
+            StationBox.Text = GenericCodeClass.ChosenProductString;
             GenericCodeClass.IsAppResuming = false;
             await GetFileNamesTask;
 
             DownloadFilesTask = DownloadFiles();
 
-            switch (GenericCodeClass.SatelliteTypeString)
-            {
-                case "ir4":
-                case "alir":
-                case "1070":
-                case "03":
-                    SatelliteProduct = "Infrared";
-                    break;
-                case "rb":
-                    SatelliteProduct = "Rainbow";
-                    break;
-                case "avn":
-                    SatelliteProduct = "Aviation";
-                    break;
-                case "rgb":
-                    SatelliteProduct = "RGB";
-                    break;
-                case "vis":
-                case "alvs":
-                case "visible":
-                case "nir":
-                    SatelliteProduct = "Visible";
-                    break;
-            }
+            //switch (GenericCodeClass.SatelliteTypeString)
+            //{
+            //    case "ir4":
+            //    case "alir":
+            //    case "1070":
+            //    case "03":
+            //        SatelliteProduct = "Infrared";
+            //        break;
+            //    case "rb":
+            //        SatelliteProduct = "Rainbow";
+            //        break;
+            //    case "avn":
+            //        SatelliteProduct = "Aviation";
+            //        break;
+            //    case "rgb":
+            //        SatelliteProduct = "RGB";
+            //        break;
+            //    case "vis":
+            //    case "alvs":
+            //    case "visible":
+            //    case "nir":
+            //        SatelliteProduct = "Visible";
+            //        break;
+            //}
 
             LoopTimer.Interval = GenericCodeClass.LoopInterval; //Create a timer that trigger every 1 s
             DownloadTimer.Interval = GenericCodeClass.DownloadInterval; //Create a timer that triggers every 30 min
@@ -242,7 +242,7 @@ namespace AvWx
 
             for (i = 0; i < Files.Count; i++)
             {
-                if (GenericCodeClass.ExistingFiles.Contains(Files[i].ToString()) && GenericCodeClass.HomeStationChanged == false)
+                if (GenericCodeClass.ExistingFiles.Contains(Files[i].ToString()) && GenericCodeClass.SettingsChanged == false)
                 {
                     GenericCodeClass.ExistingFiles.Remove(Files[i].ToString());
                     continue;
@@ -262,7 +262,7 @@ namespace AvWx
                 {
                     BitmapImage img = await GenericCodeClass.GetBitmapImage(ImageFolder, Files[i]);
 
-                    if (GenericCodeClass.HomeStationCodeString.Equals("WEST_CAN_USA") || GenericCodeClass.HomeProvinceName.Equals("Polar Imagery"))
+                    if (GenericCodeClass.RegionCodeString.Equals("WEST_CAN_USA") || GenericCodeClass.ChosenProductString.Equals("Polar Imagery"))
                         ImgBox.Height = 0.7 * img.PixelHeight; //Change the factor to scale the sizes of the western Canada and polar images.
                                                                 //Currently set to 70% of the image height.
                     else
@@ -318,7 +318,7 @@ namespace AvWx
 
                 img = await GenericCodeClass.GetBitmapImage(ImageFolder, Files[ImageIndex]);
 
-                if (GenericCodeClass.HomeStationCodeString.Equals("WEST_CAN_USA") || GenericCodeClass.HomeProvinceName.Equals("Polar Imagery"))
+                if (GenericCodeClass.RegionCodeString.Equals("WEST_CAN_USA") || GenericCodeClass.ChosenProductString.Equals("Polar Imagery"))
                     ImgBox.Height = 0.7* img.PixelHeight; //Change the factor to scale the sizes of the western Canada and polar images.
                                                            //Currently set to 70% of the image height.
                 else
@@ -404,37 +404,37 @@ namespace AvWx
             if (GenericCodeClass.IsLoopPaused == false)
                 LoopTimer.Stop();
 
-            switch (GenericCodeClass.SatelliteTypeString)
-            {
-                case "ir4":
-                case "alir":
-                case "1070":
-                case "03":
-                    SatelliteProduct = "Infrared";
-                    break;
-                case "rb":
-                    SatelliteProduct = "Rainbow";
-                    break;
-                case "avn":
-                    SatelliteProduct = "Aviation";
-                    break;
-                case "rgb":
-                    SatelliteProduct = "RGB";
-                    break;
-                case "vis":
-                case "alvs":
-                case "visible":
-                case "nir":
-                    SatelliteProduct = "Visible";
-                    break;
-            }
+            //switch (GenericCodeClass.SatelliteTypeString)
+            //{
+            //    case "ir4":
+            //    case "alir":
+            //    case "1070":
+            //    case "03":
+            //        SatelliteProduct = "Infrared";
+            //        break;
+            //    case "rb":
+            //        SatelliteProduct = "Rainbow";
+            //        break;
+            //    case "avn":
+            //        SatelliteProduct = "Aviation";
+            //        break;
+            //    case "rgb":
+            //        SatelliteProduct = "RGB";
+            //        break;
+            //    case "vis":
+            //    case "alvs":
+            //    case "visible":
+            //    case "nir":
+            //        SatelliteProduct = "Visible";
+            //        break;
+            //}
 
             GetFileNamesTask = GenericCodeClass.GetListOfLatestFiles(Files);
 
-            if (GenericCodeClass.HomeStationChanged == true)
+            if (GenericCodeClass.SettingsChanged == true)
             {
                 DeleteFilesTask = GenericCodeClass.DeleteFiles(ImageFolder, null, true);
-                StationBox.Text = GenericCodeClass.HomeStationName;
+                StationBox.Text = GenericCodeClass.ChosenProductString;
 
                 await DeleteFilesTask;
             }
@@ -466,7 +466,7 @@ namespace AvWx
                 ImgBox.Source = null;
             }
 
-            GenericCodeClass.HomeStationChanged = false;
+            GenericCodeClass.SettingsChanged = false;
 
 
         }

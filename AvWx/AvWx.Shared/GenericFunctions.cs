@@ -15,19 +15,21 @@ static class GenericCodeClass
     private static TimeSpan LoopTimerInterval = new TimeSpan(0, 0, 0, 0, 500); //Loop timer interval in seconds
     private static TimeSpan DownloadTimerInterval = new TimeSpan(0, 15, 0); //Download time interval in minutes
     private static string HomeStationURL;
-    private static string HomeStationString;
-    private static bool IsHomeStationChanged = false;
+    //private static string HomeStationString;
+    private static bool AreSettingsChanged = false;
     private static HttpClient Client;
     private static HttpResponseMessage Message;
     private static int DownloadPeriod = 3;
     public static List<string> ExistingFiles = new List<string>();
     public static bool IsLoopPaused = false;
     public static bool IsAppResuming = false;
-    private static string SatelliteType;
-    private static string HomeStationCode;
-    private static string HomeProvince;
+    //private static string SatelliteType;
+    private static string RegionCode; //Can use this for lightning data
+    private static string ChosenProduct;
+    private static string ChosenRegion;
     private static bool IsCanadaSelected;
-    private static string TypeCode;
+    private static string ChosenStationOrType;
+    private static string ChosenDir;
 
     //Provide access to private property specifying Loop timer Interval
     public static TimeSpan LoopInterval
@@ -50,10 +52,10 @@ static class GenericCodeClass
     }
 
     //Provide access to private property specifying whether home station has changed
-    public static bool HomeStationChanged
+    public static bool SettingsChanged
     {
-        get { return IsHomeStationChanged; }
-        set { IsHomeStationChanged = value; }
+        get { return AreSettingsChanged; }
+        set { AreSettingsChanged = value; }
     }
 
     //Provide access to private property specifying Home Weather Station
@@ -63,37 +65,43 @@ static class GenericCodeClass
         set
         {
             if (HomeStationURL != value)
-                IsHomeStationChanged = true;
+                AreSettingsChanged = true;  //Ashwin - is this redundant?
 
             HomeStationURL = value;
         }
     }
 
-    public static string HomeStationName
-    {
-        get { return HomeStationString; }
-        set { HomeStationString = value; }
-    }
+    //public static string HomeStationName
+    //{
+    //    get { return HomeStationString; }
+    //    set { HomeStationString = value; }
+    //}
 
     //Provide access to private property specifying the type of satellite imagery
-    public static string SatelliteTypeString
-    {
-        get { return SatelliteType; }
-        set { SatelliteType = value; }
-    }
+    //public static string SatelliteTypeString
+    //{
+    //    get { return SatelliteType; }
+    //    set { SatelliteType = value; }
+    //}
 
     //Provide access to private property specifying the home station code
-    public static string HomeStationCodeString
+    public static string RegionCodeString
     {
-        get { return HomeStationCode; }
-        set { HomeStationCode = value; }
+        get { return RegionCode; }
+        set { RegionCode = value; }
     }
 
     //Provide access to private property specifying the home province
-    public static string HomeProvinceName
+    public static string ChosenProductString
     {
-        get { return HomeProvince; }
-        set { HomeProvince = value; }
+        get { return ChosenProduct; }
+        set { ChosenProduct = value; }
+    }
+
+    public static string ChosenRegionString
+    {
+        get { return ChosenRegion; }
+        set { ChosenRegion = value; }
     }
 
     public static bool CanadaSelected
@@ -102,10 +110,16 @@ static class GenericCodeClass
         set { IsCanadaSelected = value; }
     }
 
-    public static string TypeCodeString
+    public static string ChosenStationOrTypeString
     {
-        get { return TypeCode; }
-        set { TypeCode = value; }
+        get { return ChosenStationOrType; }
+        set { ChosenStationOrType = value; }
+    }
+
+    public static string ChosenDirString
+    {
+        get { return ChosenDir; }
+        set { ChosenDir = value; }
     }
 
     //public static DateTime GetDateTimeFromFile(string Filename)
@@ -117,7 +131,7 @@ static class GenericCodeClass
     //    string Day;
     //    string Month;
 
-    //    if (!HomeProvinceName.Equals("Polar Imagery") && !HomeStationCodeString.Equals("NEPAC") && !HomeStationCodeString.Equals("WEST_CAN_USA"))
+    //    if (!ChosenProductString.Equals("Polar Imagery") && !RegionCodeString.Equals("NEPAC") && !RegionCodeString.Equals("WEST_CAN_USA"))
     //    {
     //        Time = Filename.Substring(8, 4);
     //        Year = Filename.Substring(0, 4);
@@ -125,7 +139,7 @@ static class GenericCodeClass
     //        LocalDateTime = new DateTime(Convert.ToInt32(Year) - 1, 12, 31, Convert.ToInt32(Time.Substring(0, 2)), Convert.ToInt32(Time.Substring(2, 2)), 0);
     //        LocalDateTime = LocalDateTime.AddDays(Convert.ToDouble(Day));
     //    }
-    //    else if (HomeStationCodeString.Equals("WEST_CAN_USA"))
+    //    else if (RegionCodeString.Equals("WEST_CAN_USA"))
     //    {
     //        Time = Filename.Substring(8, 4);
     //        Year = Filename.Substring(0, 4);
@@ -160,7 +174,7 @@ static class GenericCodeClass
 
         ExistingFiles.Clear();
 
-        if (IsHomeStationChanged == false)
+        if (AreSettingsChanged == false)
         {
             foreach (string str in FileNames)
             {
@@ -175,7 +189,7 @@ static class GenericCodeClass
 
         //StartDateTime = CurrDateTime.Subtract(new TimeSpan(DownloadPeriod, 0, 0));    //Subtract a time span equal to the download period from the Current Time
 
-        //if (HomeStationCodeString.Equals("WEST_CAN_USA"))
+        //if (RegionCodeString.Equals("WEST_CAN_USA"))
         //{
         //    URI = new Uri("http://www.atmos.washington.edu/cgi-bin/list.cgi?ir4km");
 
@@ -197,7 +211,7 @@ static class GenericCodeClass
         //}
 
         ////Normal NOAA Download begin
-        //if (!HomeProvince.Equals("Polar Imagery") && !HomeStationCodeString.Equals("NEPAC") && !HomeProvince.Equals("Analysis Charts"))
+        //if (!ChosenProduct.Equals("Polar Imagery") && !RegionCodeString.Equals("NEPAC") && !ChosenProduct.Equals("Analysis Charts"))
         //{
         //    Client.DefaultRequestHeaders.IfModifiedSince = StartDateTime;
         //    var HttpClientTask = Client.GetAsync(URI);
@@ -264,13 +278,13 @@ static class GenericCodeClass
         //}//Normal NOAA download end. Handle special cases begin
         //else
         //{
-        //if (HomeProvince.Equals("Polar Imagery"))
+        //if (ChosenProduct.Equals("Polar Imagery"))
         //{
-        //    if (HomeStationCodeString.Equals("YUKON "))
+        //    if (RegionCodeString.Equals("YUKON "))
         //    {
         //        FileNames.Add("hrpt_ykn_" + SatelliteTypeString + "_100.jpg");
         //    }
-        //    else if (HomeStationCodeString.Equals("HUDSON_BAY"))
+        //    else if (RegionCodeString.Equals("HUDSON_BAY"))
         //    {
         //        FileNames.Add("hrpt_hsb_" + SatelliteTypeString + "_100.jpg");
         //    }
@@ -280,135 +294,90 @@ static class GenericCodeClass
         //    }
         //}
 
-        if (HomeProvince.Equals("Analysis Charts"))
+        if (ChosenProduct.Equals("Analysis Charts"))
         {
-            if (HomeStationCodeString.Equals("surface"))
+            if (ChosenRegion.Equals("Surface"))
             {
                 FileNames.Add("LatestPrev-analsfc.png");
                 FileNames.Add("Latest-analsfc.png");
             }
-            if (HomeStationCodeString.Equals("850"))
+            if (ChosenRegion.Equals("850 mb (5 000')"))
             {
                 FileNames.Add("LatestPrev-anal850.png");
                 FileNames.Add("Latest-anal850.png");
             }
-            if (HomeStationCodeString.Equals("700"))
+            if (ChosenRegion.Equals("700 mb (10 000')"))
             {
                 FileNames.Add("LatestPrev-anal700.png");
                 FileNames.Add("Latest-anal700.png");
             }
-            if (HomeStationCodeString.Equals("500"))
+            if (ChosenRegion.Equals("500 mb (18 000')"))
             {
                 FileNames.Add("LatestPrev-anal500.png");
                 FileNames.Add("Latest-anal500.png");
             }
-            if (HomeStationCodeString.Equals("250"))
+            if (ChosenRegion.Equals("250 mb (34 000')"))
             {
                 FileNames.Add("LatestPrev-anal250.png");
                 FileNames.Add("Latest-anal250.png");
             }
         }
 
-        if (HomeProvince.Equals("Local Graphic Forecasts (West Coast)"))
+        if (ChosenProduct.Equals("Local Graphic Forecasts (West Coast)"))
         {
-            if (HomeStationCodeString.Equals("north"))
-            {
-                FileNames.Add("Latest-lgfzvr43_0000.png");
-                FileNames.Add("Latest-lgfzvr43_0300.png");
-                FileNames.Add("Latest-lgfzvr43_0600.png");
-            }
-            if (HomeStationCodeString.Equals("central"))
-            {
-                FileNames.Add("Latest-lgfzvr42_0000.png");
-                FileNames.Add("Latest-lgfzvr42_0300.png");
-                FileNames.Add("Latest-lgfzvr42_0600.png");
-            }
-            if (HomeStationCodeString.Equals("south"))
-            {
-                FileNames.Add("Latest-lgfzvr41_0000.png");
-                FileNames.Add("Latest-lgfzvr41_0300.png");
-                FileNames.Add("Latest-lgfzvr41_0600.png");
-            }
+            for (int i = 0; i < 900; i += 300)
+                FileNames.Add("Latest-lgfzvr" + RegionCode + "_" + i.ToString("D4") + ".png");
+            //FileNames.Add("Latest-lgfzvr" + RegionCode + "_0300.png");
+            //FileNames.Add("Latest-lgfzvr" + RegionCode + "_0600.png");
+            //if (ChosenRegion.Equals("North Coast"))
+            //{
+            //    FileNames.Add("Latest-lgfzvr43_0000.png");
+            //    FileNames.Add("Latest-lgfzvr43_0300.png");
+            //    FileNames.Add("Latest-lgfzvr43_0600.png");
+            //}
+            //if (ChosenRegion.Equals("Central Coast"))
+            //{
+            //    FileNames.Add("Latest-lgfzvr42_0000.png");
+            //    FileNames.Add("Latest-lgfzvr42_0300.png");
+            //    FileNames.Add("Latest-lgfzvr42_0600.png");
+            //}
+            //if (ChosenRegion.Equals("South Coast"))
+            //{
+            //    FileNames.Add("Latest-lgfzvr41_0000.png");
+            //    FileNames.Add("Latest-lgfzvr41_0300.png");
+            //    FileNames.Add("Latest-lgfzvr41_0600.png");   
+            //}
         }
 
-        if (HomeProvince.Equals("Lightning Map"))
-        {
-            if (HomeStationCodeString.Equals("lightningARC"))
-            {
-                GenericCodeClass.GetWeatherDataURLs(FileNames, 6);
-                return;
-            }
-            if (HomeStationCodeString.Equals("lightningATL"))
-            {
-                GenericCodeClass.GetWeatherDataURLs(FileNames, 6);
-                return;
-            }
-            if (HomeStationCodeString.Equals("lightningONT"))
-            {
-                GenericCodeClass.GetWeatherDataURLs(FileNames, 6);
-                return;
-            }
-            if (HomeStationCodeString.Equals("lightningPAC"))
-            {
-                GenericCodeClass.GetWeatherDataURLs(FileNames, 6);
-                return;
-            }
-            if (HomeStationCodeString.Equals("lightningWRN"))
-            {
-                GenericCodeClass.GetWeatherDataURLs(FileNames, 6);
-                return;
-            }
-            if (HomeStationCodeString.Equals("lightningQUE"))
-            {
-                GenericCodeClass.GetWeatherDataURLs(FileNames, 6);
-                return;
-            }
-        }
+        if (ChosenProduct.Equals("Lightning Map"))
+            GenericCodeClass.GetWeatherDataURLs(FileNames, 6);
 
-        if (HomeProvince.Equals("Graphical Area Forecasts"))
+        if (ChosenProduct.Equals("Graphical Area Forecasts"))
         {
-            if (HomeStationCodeString.Equals("Arctic"))
+            if (ChosenStationOrTypeString.Contains("Clouds"))   //Ashwin - for some reason, the "&" character causes problems!
             {
-                if (TypeCodeString.Equals("Clouds &amp; Weather"))
-                {
-                    FileNames.Add("Latest-gfacn37_cldwx_000.png");
-                    //FileNames.Add("Latest-gfacn37_cldwx_006.png");
-                    //FileNames.Add("Latest-gfacn37_cldwx_012.png");
-                }
-                //if (TypeCodeString.Equals("Icing, Turbulence &amp; Freezing Level"))
-                //{
-                //    FileNames.Add("Latest-gfacn37_turbc_000.png");
+                FileNames.Add("Latest-"+ RegionCode + "_cldwx_000.png");
+                //FileNames.Add("Latest-gfacn37_cldwx_006.png");
+                //FileNames.Add("Latest-gfacn37_cldwx_012.png");
+            }
+
+            if (ChosenStationOrTypeString.Contains("Icing"))
+            {
+                FileNames.Add("Latest-" + RegionCode + "_turbc_000.png");
                 //    FileNames.Add("Latest-gfacn37_turbc_006.png");
                 //    FileNames.Add("Latest-gfacn37_turbc_012.png");
                 //}
             }
-            if (HomeStationCodeString.Equals("Atlantic"))
-            {
-
-            }
-            if (HomeStationCodeString.Equals("Nunavut"))
-            {
-
-            }
-            if (HomeStationCodeString.Equals("Ontario &amp; Quebec"))
-            {
-
-            }
-            if (HomeStationCodeString.Equals("Pacific"))
-            {
-
-            }
-            if (HomeStationCodeString.Equals("Prairies"))
-            {
-
-            }
-            if (HomeStationCodeString.Equals("Yukon &amp; NWT"))
-            {
-
-            }
         }
 
-        //else if (HomeStationCodeString.Equals("NEPAC"))
+        if (ChosenProduct.Equals("Weather Cameras"))
+        {
+            for(int i = 1; i < 7; i++)
+                FileNames.Add(RegionCode + "_" + ChosenDir + "-full-" + i.ToString() + "-e.jpeg");
+        }
+            
+
+        //else if (RegionCodeString.Equals("NEPAC"))
         //{
         //    int i = 1;
 
@@ -443,7 +412,7 @@ static class GenericCodeClass
 
         for (i = 0; i < NoOfFiles; i++)
         {
-            FileNames.Add(CurrDateTime.Year.ToString() + CurrDateTime.Month.ToString("D2") + CurrDateTime.Day.ToString("D2") + CurrDateTime.Hour.ToString("D2") + CurrDateTime.Minute.ToString("D2") + ".png");
+            FileNames.Add(RegionCode + "_" + CurrDateTime.Year.ToString() + CurrDateTime.Month.ToString("D2") + CurrDateTime.Day.ToString("D2") + CurrDateTime.Hour.ToString("D2") + CurrDateTime.Minute.ToString("D2") + ".png");
             CurrDateTime = CurrDateTime.AddMinutes(-10);
         }
 
@@ -461,7 +430,7 @@ static class GenericCodeClass
 
         ////Set appropriate download periods for polar and non-polar imagery. Files that have been modified/added during this period will be
         ////downloaded.
-        //if (HomeProvinceName.Equals("Polar Imagery"))
+        //if (ChosenProductString.Equals("Polar Imagery"))
         //    Client.DefaultRequestHeaders.IfModifiedSince = CurrDateTime.Subtract(new TimeSpan(6, 0, 0));
         //else
         //    Client.DefaultRequestHeaders.IfModifiedSince = CurrDateTime.Subtract(new TimeSpan(DownloadPeriod, 0, 0));
@@ -586,11 +555,14 @@ static class GenericCodeClass
         {
             if (SettingsChanged == true)
             {
-                RoamingSettings.Values["SatelliteType"] = SatelliteType;
-                RoamingSettings.Values["HomeStationCode"] = HomeStationCode;
+                //RoamingSettings.Values["SatelliteType"] = SatelliteType;
+                RoamingSettings.Values["ChosenProduct"] = ChosenProduct;
+                RoamingSettings.Values["ChosenRegion"] = ChosenRegion;
+                RoamingSettings.Values["RegionCode"] = RegionCode;
+                RoamingSettings.Values["ChosenStationOrType"] = ChosenStationOrType;
+                RoamingSettings.Values["ChosenDir"] = ChosenDir;
                 RoamingSettings.Values["HomeStationURL"] = HomeStationURL;
-                RoamingSettings.Values["HomeStationString"] = HomeStationString;
-                RoamingSettings.Values["HomeProvince"] = HomeProvince;
+                //RoamingSettings.Values["HomeStationString"] = HomeStationString;
                 RoamingSettings.Values["DownloadPeriod"] = DownloadPeriod;
                 RoamingSettings.Values["LoopTimerInterval"] = LoopTimerInterval.Milliseconds;
                 //RoamingSettings.Values["IsCanadaSelected"] = IsCanadaSelected;
@@ -609,13 +581,17 @@ static class GenericCodeClass
         {
             try
             {
+                ChosenProduct = RoamingSettings.Values["ChosenProduct"].ToString();
+                ChosenRegion = RoamingSettings.Values["ChosenRegion"].ToString();
+                RegionCode = RoamingSettings.Values["RegionCode"].ToString();
+                ChosenStationOrType = RoamingSettings.Values["ChosenStationOrType"].ToString();
+                ChosenDir = RoamingSettings.Values["ChosenDir"].ToString();
                 HomeStationURL = RoamingSettings.Values["HomeStationURL"].ToString();
-                LoopTimerInterval = new TimeSpan(0, 0, 0, 0, (int)RoamingSettings.Values["LoopTimerInterval"]);
-                HomeStationString = RoamingSettings.Values["HomeStationString"].ToString();
+                //HomeStationString = RoamingSettings.Values["HomeStationString"].ToString();
                 DownloadPeriod = (int)RoamingSettings.Values["DownloadPeriod"];
-                SatelliteType = RoamingSettings.Values["SatelliteType"].ToString();
-                HomeStationCode = RoamingSettings.Values["HomeStationCode"].ToString();
-                HomeProvince = RoamingSettings.Values["HomeProvince"].ToString();
+                LoopTimerInterval = new TimeSpan(0, 0, 0, 0, (int)RoamingSettings.Values["LoopTimerInterval"]);
+                //SatelliteType = RoamingSettings.Values["SatelliteType"].ToString();
+                               
                 IsLoopPaused = (bool)RoamingSettings.Values["IsLoopPaused"];
                 //IsCanadaSelected = (bool)RoamingSettings.Values["IsCanadaSelected"];
 
@@ -624,11 +600,15 @@ static class GenericCodeClass
             {
                 HomeStationURL = "https://flightplanning.navcanada.ca/Latest/anglais/produits/analyses/surface/";
                 LoopTimerInterval = new TimeSpan(0, 0, 0, 0, 500);
-                HomeStationString = "Surface";
+                //HomeStationString = "Surface";
                 DownloadPeriod = 1;
-                SatelliteType = "vis";
-                HomeStationCode = "surface";
-                HomeProvince = "Analysis Charts";
+                //SatelliteType = "vis";
+                ChosenProduct = "Analysis Charts";
+                ChosenRegion = "Surface";
+                ChosenStationOrType = "";
+                ChosenDir = "";
+                RegionCode = "";
+                
                 //IsCanadaSelected = true;
             }
         }

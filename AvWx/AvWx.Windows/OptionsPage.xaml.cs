@@ -20,10 +20,13 @@ namespace AvWx
     public sealed partial class OptionsPage : SettingsFlyout
     {
         public event EventHandler SettingsChanged;
-        private static String ChosenCityName;
-        private static String ChosenCityURL;
+        private static String ChosenProductName;
+        private static String ChosenRegionName;
+        private static String ChosenStationOrTypeName;
+        private static String ChosenDirName;
+        private static String ChosenURL;
         private static String ChosenSatelliteType;
-        private static XMLParserClass ProvincialCityXML = new XMLParserClass("ProvinceCities.xml");
+        private static XMLParserClass ProductXML = new XMLParserClass("Products.xml");
         private static XMLParserClass CityCodeXML = new XMLParserClass("CityCodes.xml");
 
         public OptionsPage()
@@ -31,24 +34,26 @@ namespace AvWx
             this.InitializeComponent();            
         }
 
-        private void ProvinceComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void ProductComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (ProvinceComboBox != null)
+            //Ashwin - Set the eneabled options on all combo boxes and then populate the region combo box. The next two levels will be
+            //populated after being triggered from the selection changed events from region combobox
+            if (ProductComboBox != null)
             {
-                PopulateStationBox(ProvinceComboBox.SelectedIndex, ProvinceComboBox.Items[ProvinceComboBox.SelectedIndex].ToString(), false);
                 SetOptions();
+                PopulateRegionBox(ProductComboBox.SelectedIndex, ProductComboBox.Items[ProductComboBox.SelectedIndex].ToString(), false);
             }
         }
 
         private void SetOptions()
         {
-            //bool IsPolarSelected = ProvinceComboBox.Items[ProvinceComboBox.SelectedIndex].Equals("Polar Imagery");
-            //bool AreProvincesSelected = ProvinceComboBox.Items[ProvinceComboBox.SelectedIndex].Equals("British Columbia") ||
-            //                            ProvinceComboBox.Items[ProvinceComboBox.SelectedIndex].Equals("Ontario") ||
-            //                            ProvinceComboBox.Items[ProvinceComboBox.SelectedIndex].Equals("New Brunswick");
-            //bool IsRegionalSelected = ProvinceComboBox.Items[ProvinceComboBox.SelectedIndex].Equals("Regional Imagery");
-            //bool IsNEPacSelected = StationComboBox.Items[StationComboBox.SelectedIndex].Equals("Northeast Pacific");
-            //bool IsWestCanSelected = StationComboBox.Items[StationComboBox.SelectedIndex].Equals("Western Canada/USA");
+            //bool IsPolarSelected = ProductComboBox.Items[ProductComboBox.SelectedIndex].Equals("Polar Imagery");
+            //bool AreProvincesSelected = ProductComboBox.Items[ProductComboBox.SelectedIndex].Equals("British Columbia") ||
+            //                            ProductComboBox.Items[ProductComboBox.SelectedIndex].Equals("Ontario") ||
+            //                            ProductComboBox.Items[ProductComboBox.SelectedIndex].Equals("New Brunswick");
+            //bool IsRegionalSelected = ProductComboBox.Items[ProductComboBox.SelectedIndex].Equals("Regional Imagery");
+            //bool IsNEPacSelected = RegionComboBox.Items[RegionComboBox.SelectedIndex].Equals("Northeast Pacific");
+            //bool IsWestCanSelected = RegionComboBox.Items[RegionComboBox.SelectedIndex].Equals("Western Canada/USA");
 
             ////IR
             //ProductRadioButton1.IsEnabled = true;
@@ -74,108 +79,145 @@ namespace AvWx
             //    ProductRadioButton2.Content = "Rainbow";
             //else
             //    ProductRadioButton2.Content = "Aviation";
+            StationOrTypeComboBox.IsEnabled = ProductComboBox.SelectedItem.Equals("Graphical Area Forecasts") ||
+                                                    ProductComboBox.SelectedItem.Equals("Weather Cameras");
+            DirComboBox.IsEnabled = ProductComboBox.SelectedItem.Equals("Weather Cameras");
 
+            if (!StationOrTypeComboBox.IsEnabled)
+                StationOrTypeComboBox.Items.Clear();                
+
+            if (!DirComboBox.IsEnabled)
+                DirComboBox.Items.Clear();
         }
 
-        private void OptionsPage_BackClick(object sender, BackClickEventArgs e)
-        {
-            if (ChosenCityName != null && ChosenCityName.Equals(GenericCodeClass.HomeStationName) == false)
-            {
-                GenericCodeClass.HomeStationName = ChosenCityName;
-                GenericCodeClass.HomeStation = ChosenCityURL;   //check for null?
-                GenericCodeClass.HomeStationChanged = true;
-            }
+        //private void OptionsPage_BackClick(object sender, BackClickEventArgs e)
+        //{
+            //if (ChosenRegionName != null && ChosenRegionName.Equals(GenericCodeClass.HomeStationName) == false)
+            //{
+            //    GenericCodeClass.HomeStationName = ChosenRegionName;
+            //    GenericCodeClass.HomeStation = ChosenURL;   //check for null?
+            //    GenericCodeClass.SettingsChanged = true;
+            //}
 
-            //Better to check for existing download intervals before setting new times?
-            if (DurationRadioButton1.IsChecked == true)
-                GenericCodeClass.FileDownloadPeriod = 3;
-            else if (DurationRadioButton2.IsChecked == true)
-                GenericCodeClass.FileDownloadPeriod = 6;
-
-
-            if (LoopTimerRadioButton1.IsChecked == true)
-                GenericCodeClass.LoopInterval = new TimeSpan(0, 0, 0, 0, 100);
-            else if (LoopTimerRadioButton2.IsChecked == true)
-                GenericCodeClass.LoopInterval = new TimeSpan(0, 0, 0, 0, 500);
-            else
-                GenericCodeClass.LoopInterval = new TimeSpan(0, 0, 0, 1, 0);
+            ////Better to check for existing download intervals before setting new times?
+            //if (DurationRadioButton1.IsChecked == true)
+            //    GenericCodeClass.FileDownloadPeriod = 3;
+            //else if (DurationRadioButton2.IsChecked == true)
+            //    GenericCodeClass.FileDownloadPeriod = 6;
 
 
-            if (SettingsChanged != null)
-                SettingsChanged(this, EventArgs.Empty);
-        }
+            //if (LoopTimerRadioButton1.IsChecked == true)
+            //    GenericCodeClass.LoopInterval = new TimeSpan(0, 0, 0, 0, 100);
+            //else if (LoopTimerRadioButton2.IsChecked == true)
+            //    GenericCodeClass.LoopInterval = new TimeSpan(0, 0, 0, 0, 500);
+            //else
+            //    GenericCodeClass.LoopInterval = new TimeSpan(0, 0, 0, 1, 0);
+
+
+            //if (SettingsChanged != null)
+            //    SettingsChanged(this, EventArgs.Empty);
+        //}
 
         private void OptionsPage_Unloaded(object sender, RoutedEventArgs e)
         {
-            //bool IsAnalysisSelected = ProvinceComboBox.Items[ProvinceComboBox.SelectedIndex].Equals("Analysis Charts");
-            //bool IsLGFSelected = ProvinceComboBox.Items[ProvinceComboBox.SelectedIndex].Equals("Local Graphic Forecasts (West Coast)");
-            bool IsPolarSelected = ProvinceComboBox.Items[ProvinceComboBox.SelectedIndex].Equals("Polar Imagery");
-            bool IsNEPacSelected = StationComboBox.Items[StationComboBox.SelectedIndex].Equals("Northeast Pacific");
-            bool IsNWTerritoriesSelected = StationComboBox.Items[StationComboBox.SelectedIndex].Equals("Northwest Territories/Nunavut");
-            ChosenCityName = StationComboBox.Items[StationComboBox.SelectedIndex].ToString();
+            //bool IsAnalysisSelected = ProductComboBox.Items[ProductComboBox.SelectedIndex].Equals("Analysis Charts");
+            //bool IsLGFSelected = ProductComboBox.Items[ProductComboBox.SelectedIndex].Equals("Local Graphic Forecasts (West Coast)");
+            //bool IsPolarSelected = ProductComboBox.Items[ProductComboBox.SelectedIndex].Equals("Polar Imagery");
+            //bool IsNEPacSelected = RegionComboBox.Items[RegionComboBox.SelectedIndex].Equals("Northeast Pacific");
+            //bool IsNWTerritoriesSelected = RegionComboBox.Items[RegionComboBox.SelectedIndex].Equals("Northwest Territories/Nunavut");
+            ChosenProductName = ProductComboBox.Items[ProductComboBox.SelectedIndex].ToString();
+            ChosenRegionName = RegionComboBox.Items[RegionComboBox.SelectedIndex].ToString();
+            string HomeURL = null;
+            
 
-            //multi-URL: change codes depending on stations selected.
-            if (ProductRadioButton1.IsChecked == true)
-            {
-                if (IsNEPacSelected)
-                    ChosenSatelliteType = "alir";
-                else if (IsPolarSelected && IsNWTerritoriesSelected)
-                    ChosenSatelliteType = "ir";
-                else if (IsPolarSelected && !IsNWTerritoriesSelected)
-                    ChosenSatelliteType = "03";
-                else
-                    ChosenSatelliteType = "ir4";
-            }
-            //else if (ProductRadioButton2.IsChecked == true)
+            ////multi-URL: change codes depending on stations selected.
+            //if (ProductRadioButton1.IsChecked == true)
             //{
-            //    if (GenericCodeClass.CanadaSelected)
-            //        ChosenSatelliteType = "rb";
+            //    if (IsNEPacSelected)
+            //        ChosenSatelliteType = "alir";
+            //    else if (IsPolarSelected && IsNWTerritoriesSelected)
+            //        ChosenSatelliteType = "ir";
+            //    else if (IsPolarSelected && !IsNWTerritoriesSelected)
+            //        ChosenSatelliteType = "03";
             //    else
-            //        ChosenSatelliteType = "avn";
+            //        ChosenSatelliteType = "ir4";
             //}
-            else if (ProductRadioButton3.IsChecked == true)
+            ////else if (ProductRadioButton2.IsChecked == true)
+            ////{
+            ////    if (GenericCodeClass.CanadaSelected)
+            ////        ChosenSatelliteType = "rb";
+            ////    else
+            ////        ChosenSatelliteType = "avn";
+            ////}
+            //else if (ProductRadioButton3.IsChecked == true)
+            //{
+            //    ChosenSatelliteType = "rgb";
+            //}
+            //else if (ProductRadioButton4.IsChecked == true)
+            //{
+            //    if (IsNEPacSelected)
+            //        ChosenSatelliteType = "alvs";
+            //    else if (RegionComboBox.Items[RegionComboBox.SelectedIndex].Equals("Eastern Canada"))
+            //        ChosenSatelliteType = "visible";
+            //    else if (IsPolarSelected)
+            //        ChosenSatelliteType = "nir";
+            //    else
+            //        ChosenSatelliteType = "vis";
+            //}
+
+            GenericCodeClass.SettingsChanged = !ChosenProductName.Equals(GenericCodeClass.ChosenProductString)
+                                                    || !ChosenRegionName.Equals(GenericCodeClass.ChosenRegionString);
+
+            if(ProductComboBox.SelectedItem.Equals("Graphical Area Forecasts") || ProductComboBox.SelectedItem.Equals("Weather Cameras"))
             {
-                ChosenSatelliteType = "rgb";
+                ChosenStationOrTypeName = StationOrTypeComboBox.Items[StationOrTypeComboBox.SelectedIndex].ToString();
+                GenericCodeClass.SettingsChanged = GenericCodeClass.SettingsChanged || !ChosenStationOrTypeName.Equals(GenericCodeClass.ChosenStationOrTypeString);
             }
-            else if (ProductRadioButton4.IsChecked == true)
+                
+            if(ProductComboBox.SelectedItem.Equals("Weather Cameras"))
             {
-                if (IsNEPacSelected)
-                    ChosenSatelliteType = "alvs";
-                else if (StationComboBox.Items[StationComboBox.SelectedIndex].Equals("Eastern Canada"))
-                    ChosenSatelliteType = "visible";
-                else if (IsPolarSelected)
-                    ChosenSatelliteType = "nir";
-                else
-                    ChosenSatelliteType = "vis";
-            }
+                ChosenDirName = DirComboBox.Items[DirComboBox.SelectedIndex].ToString();
+                GenericCodeClass.SettingsChanged = GenericCodeClass.SettingsChanged || !ChosenRegionName.Equals(GenericCodeClass.ChosenDirString);
+            }                                                    
 
-            GenericCodeClass.HomeStationChanged = !ChosenCityName.Equals(GenericCodeClass.HomeStationName)
-                                                    || !ChosenSatelliteType.Equals(GenericCodeClass.SatelliteTypeString);
-
-            if (GenericCodeClass.HomeStationChanged)
+            if (GenericCodeClass.SettingsChanged)
             {
-                string HomeStation;
+                GenericCodeClass.ChosenProductString = ChosenProductName;
+                GenericCodeClass.ChosenRegionString = ChosenRegionName;
+                if (ProductComboBox.SelectedItem.Equals("Graphical Area Forecasts") || ProductComboBox.SelectedItem.Equals("Weather Cameras"))
+                    GenericCodeClass.ChosenStationOrTypeString = ChosenStationOrTypeName;
 
-                if (StationComboBox != null)
-                {
-                    GenericCodeClass.HomeStationCodeString = CityCodeXML.GetCityCode(StationComboBox.Items[StationComboBox.SelectedIndex].ToString()); //Change this to ChosenCityCode?
-                    HomeStation = CityCodeXML.GetHomeURL(StationComboBox.Items[StationComboBox.SelectedIndex].ToString()); //Change this to ChosenCityCode?
-                    HomeStation = HomeStation.Replace("{SC}", GenericCodeClass.HomeStationCodeString);
-                    GenericCodeClass.HomeStation = HomeStation.Replace("{OPTION}", ChosenSatelliteType);
-                }
+                if (ProductComboBox.SelectedItem.Equals("Weather Cameras"))
+                    GenericCodeClass.ChosenDirString = ChosenDirName;
 
-                GenericCodeClass.HomeStationName = StationComboBox.Items[StationComboBox.SelectedIndex].ToString();
-                GenericCodeClass.HomeProvinceName = ProvinceComboBox.Items[ProvinceComboBox.SelectedIndex].ToString();
-                GenericCodeClass.SatelliteTypeString = ChosenSatelliteType;
-                //GenericCodeClass.TypeCodeString = TypeComboBox.Items[TypeComboBox.SelectedIndex].ToString();
+                GenericCodeClass.RegionCodeString = ProductXML.ReadCode(ChosenProductName, ChosenRegionName, ChosenStationOrTypeName);
+                
+                HomeURL = ProductXML.ReadBaseURL(ChosenProductName);
+                GenericCodeClass.HomeStation = HomeURL.Replace("{CODE}", GenericCodeClass.RegionCodeString);
+                
+                
+                //string HomeStation;
+
+                //if (RegionComboBox != null)
+                //{
+                //    GenericCodeClass.HomeStationCodeString = CityCodeXML.GetCityCode(RegionComboBox.Items[RegionComboBox.SelectedIndex].ToString()); //Change this to ChosenCityCode?
+                //    HomeStation = CityCodeXML.GetHomeURL(RegionComboBox.Items[RegionComboBox.SelectedIndex].ToString()); //Change this to ChosenCityCode?
+                //    HomeStation = HomeStation.Replace("{SC}", GenericCodeClass.HomeStationCodeString);
+                //    GenericCodeClass.HomeStation = HomeStation.Replace("{OPTION}", ChosenSatelliteType);
+                //}
+
+                //GenericCodeClass.HomeStationName = RegionComboBox.Items[RegionComboBox.SelectedIndex].ToString();
+                //GenericCodeClass.ChosenProductString = ProductComboBox.Items[ProductComboBox.SelectedIndex].ToString();
+                //GenericCodeClass.SatelliteTypeString = ChosenSatelliteType;
+                ////GenericCodeClass.TypeCodeString = StationOrTypeComboBox.Items[StationOrTypeComboBox.SelectedIndex].ToString();
             }
             //Better to check for existing download intervals before setting new times?
-            if (DurationRadioButton1.IsChecked == true)
-                GenericCodeClass.FileDownloadPeriod = 3;
-            else if (DurationRadioButton2.IsChecked == true)
-                GenericCodeClass.FileDownloadPeriod = 6;
-            else if (DurationRadioButton3.IsChecked == true)
-                GenericCodeClass.FileDownloadPeriod = 1;
+            //if (DurationRadioButton1.IsChecked == true)
+            //    GenericCodeClass.FileDownloadPeriod = 3;
+            //else if (DurationRadioButton2.IsChecked == true)
+            //    GenericCodeClass.FileDownloadPeriod = 6;
+            //else if (DurationRadioButton3.IsChecked == true)
+            //    GenericCodeClass.FileDownloadPeriod = 1;
             
             if (LoopTimerRadioButton1.IsChecked == true)
                 GenericCodeClass.LoopInterval = new TimeSpan(0, 0, 0, 0, 100);
@@ -221,28 +263,28 @@ namespace AvWx
                     break;
             }
 
-            switch (GenericCodeClass.SatelliteTypeString)
-            {
-                case "ir4":
-		        case "alir":
-		        case "1070":
-		        case "03":
-                    ProductRadioButton1.IsChecked = true;
-                    break;
-                case "rb":
-		        case "avn":	
-                    ProductRadioButton2.IsChecked = true;
-                    break;
-                case "rgb":
-                    ProductRadioButton3.IsChecked = true;
-                    break;
-                case "vis":
-		        case "alvs":
-		        case "visible":
-		        case "nir":	
-                    ProductRadioButton4.IsChecked = true;
-                    break;
-            }
+            //switch (GenericCodeClass.SatelliteTypeString)
+            //{
+            //    case "ir4":
+            //    case "alir":
+            //    case "1070":
+            //    case "03":
+            //        ProductRadioButton1.IsChecked = true;
+            //        break;
+            //    case "rb":
+            //    case "avn":	
+            //        ProductRadioButton2.IsChecked = true;
+            //        break;
+            //    case "rgb":
+            //        ProductRadioButton3.IsChecked = true;
+            //        break;
+            //    case "vis":
+            //    case "alvs":
+            //    case "visible":
+            //    case "nir":	
+            //        ProductRadioButton4.IsChecked = true;
+            //        break;
+            //}
 
             //CountryRadioButton1.IsChecked = GenericCodeClass.CanadaSelected;
             //CountryRadioButton2.IsChecked = !GenericCodeClass.CanadaSelected;
@@ -258,45 +300,72 @@ namespace AvWx
             //    CityCodeXML.SetSourceFile("USCityCodes.xml");
             //}
 
-            PopulateProvinceBox(true);
-            PopulateStationBox(ProvinceComboBox.SelectedIndex, ProvinceComboBox.Items[ProvinceComboBox.SelectedIndex].ToString(), true);
-            SetOptions();
+            PopulateProductBox(true);
+            //PopulateRegionBox(ProductComboBox.SelectedIndex, ProductComboBox.Items[ProductComboBox.SelectedIndex].ToString(), true);
+            //PopulateStationOrTypeBox(ProductComboBox.SelectedIndex, ProductComboBox.Items[ProductComboBox.SelectedIndex].ToString(), RegionComboBox.Items[RegionComboBox.SelectedIndex].ToString(), true);
+            
             
             //CountryRadioButton1.Checked += CountryRadioButton_CheckedHandler;
             //CountryRadioButton2.Checked += CountryRadioButton_CheckedHandler;
         }
 
-        private void PopulateStationBox(int ProvinceBoxIndex, string ProvinceName, bool UseHomeStationValue)
+        private void PopulateRegionBox(int ProductBoxIndex, string ProductName, bool UseHomeStationValue)
         {
 
-            if (StationComboBox != null)
+            if (RegionComboBox != null)
             {
-                List<string> CityNames = new List<string>();
+                List<string> RegionNames = new List<string>();
 
-                StationComboBox.SelectionChanged -= StationComboBox_SelectionChanged;
+                RegionComboBox.SelectionChanged -= RegionComboBox_SelectionChanged;
 
-                if (ProvinceName.Contains('&'))
-                    ProvinceName = ProvinceName.Substring(0, 12);
+                if (ProductName.Contains('&'))
+                    ProductName = ProductName.Substring(0, 12);
 
-                ProvincialCityXML.ReadCitiesInProvince(ProvinceName, CityNames);
-                if (StationComboBox != null)
+                ProductXML.ReadProductOptionList(ProductName, RegionNames);
+                if (RegionComboBox != null)
                 {
-                    StationComboBox.Items.Clear();
-                    foreach (string City in CityNames)
-                    {
-                        StationComboBox.Items.Add(City);
-                    }
+                    RegionComboBox.Items.Clear();
+                    foreach (string Option in RegionNames)
+                        RegionComboBox.Items.Add(Option);
                 }
 
-                
+                RegionComboBox.SelectionChanged += RegionComboBox_SelectionChanged;
                 if (UseHomeStationValue)
-                    StationComboBox.SelectedItem = GenericCodeClass.HomeStationName;
+                    RegionComboBox.SelectedItem = GenericCodeClass.ChosenRegionString;
                 else
-                    StationComboBox.SelectedIndex = 0;
-                StationComboBox.SelectionChanged += StationComboBox_SelectionChanged;
+                    RegionComboBox.SelectedIndex = 0;
             }
 
 
+        }
+
+        private void PopulateStationOrTypeBox(int ProductBoxIndex, string ProductName, string StationName, bool UseHomeStationValue)
+        {
+
+            if (StationOrTypeComboBox != null)
+            {
+                List<string> Option2Names = new List<string>();
+
+                StationOrTypeComboBox.SelectionChanged -= StationOrTypeComboBox_SelectionChanged;
+
+                if (ProductName.Contains('&'))
+                    ProductName = ProductName.Substring(0, 12);
+
+                ProductXML.ReadChoiceList(ProductName, StationName, Option2Names);
+                if (StationOrTypeComboBox != null)
+                {
+                    StationOrTypeComboBox.Items.Clear();
+                    foreach (string Option in Option2Names)
+                        StationOrTypeComboBox.Items.Add(Option);
+                }
+
+                StationOrTypeComboBox.SelectionChanged += StationOrTypeComboBox_SelectionChanged;
+                if (UseHomeStationValue)
+                    StationOrTypeComboBox.SelectedItem = GenericCodeClass.ChosenStationOrTypeString;
+                else
+                    StationOrTypeComboBox.SelectedIndex = 0;
+                
+            }
         }
 
         //private void CountryRadioButton_CheckedHandler(object sender, RoutedEventArgs e)
@@ -323,30 +392,98 @@ namespace AvWx
 
         //}
 
-        private void PopulateProvinceBox(bool UseHomeStationVlaue)
+        private void PopulateDirBox(int ProductBoxIndex, string ProductName, string StationName, string TypeName, bool UseHomeStationValue)
         {
-            List<string> ProvinceList = ProvincialCityXML.ReadProvinceList();
 
-            if (ProvinceComboBox != null)
+            if (DirComboBox != null)
             {
-                ProvinceComboBox.SelectionChanged -= ProvinceComboBox_SelectionChanged;
-                ProvinceComboBox.Items.Clear();
+                List<string> DirList = new List<string>();
 
-                foreach (string str in ProvinceList)
-                    ProvinceComboBox.Items.Add(str);
+                //DirComboBox.SelectionChanged -= DirComboBox_SelectionChanged;
 
-                ProvinceComboBox.SelectionChanged += ProvinceComboBox_SelectionChanged;
-                if (UseHomeStationVlaue)
-                    ProvinceComboBox.SelectedItem = GenericCodeClass.HomeProvinceName;
+                if (ProductName.Contains('&'))
+                    ProductName = ProductName.Substring(0, 12);
+
+                ProductXML.ReadDirList(ProductName, StationName, TypeName, DirList);
+                if (DirComboBox != null)
+                {
+                    DirComboBox.Items.Clear();
+                    foreach (string Option in DirList)
+                        DirComboBox.Items.Add(Option);
+                }
+
+
+                if (UseHomeStationValue)
+                    DirComboBox.SelectedItem = GenericCodeClass.ChosenDirString;
                 else
-                    ProvinceComboBox.SelectedIndex = 0;
+                    DirComboBox.SelectedIndex = 0;
+                //DirComboBox.SelectionChanged += DirComboBox_SelectionChanged;
+            }
+
+
+        }
+
+        private void PopulateProductBox(bool UseHomeStationVlaue)
+        {
+            List<string> ProductList = ProductXML.ReadProductList();
+
+            if (ProductComboBox != null && ProductList != null)
+            {
+                ProductComboBox.SelectionChanged -= ProductComboBox_SelectionChanged;
+                ProductComboBox.Items.Clear();
+
+                foreach (string str in ProductList)
+                    ProductComboBox.Items.Add(str);
+                
+                ProductComboBox.SelectionChanged += ProductComboBox_SelectionChanged;
+                if (UseHomeStationVlaue)
+                    ProductComboBox.SelectedItem = GenericCodeClass.ChosenProductString;
+                else
+                    ProductComboBox.SelectedIndex = 0;
+
+                SetOptions();   //Set enabled properties for all boxes
             }
 
         }
 
-        private void StationComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void RegionComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            SetOptions();
+            if (ProductComboBox != null && RegionComboBox != null)
+            {
+                if (ProductComboBox.SelectedItem.Equals("Graphical Area Forecasts") || ProductComboBox.SelectedItem.Equals("Weather Cameras"))
+                {
+                    //StationOrTypeComboBox.IsEnabled = true;
+                    //SetOptions();
+                    PopulateStationOrTypeBox(ProductComboBox.SelectedIndex, ProductComboBox.Items[ProductComboBox.SelectedIndex].ToString(), RegionComboBox.Items[RegionComboBox.SelectedIndex].ToString(), false);
+                    
+                }
+                //else
+                //    StationOrTypeComboBox.IsEnabled = false;
+                
+            }            
+        }
+
+        private void StationOrTypeComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (StationOrTypeComboBox.IsEnabled && ProductComboBox != null && RegionComboBox != null & StationOrTypeComboBox != null)
+            {
+                if (ProductComboBox.SelectedItem.Equals("Weather Cameras"))
+                {
+                    //DirComboBox.IsEnabled = true;
+                    PopulateDirBox(ProductComboBox.SelectedIndex, ProductComboBox.Items[ProductComboBox.SelectedIndex].ToString(), RegionComboBox.Items[RegionComboBox.SelectedIndex].ToString(), StationOrTypeComboBox.Items[StationOrTypeComboBox.SelectedIndex].ToString(), false);
+                }                    
+                //else
+                //{
+                //    DirComboBox.Items.Clear();
+                //    DirComboBox.IsEnabled = false;
+                //}
+                //SetOptions();
+            }
+        }
+
+        private void DirComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

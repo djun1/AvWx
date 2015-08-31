@@ -36,6 +36,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="$(MSBuildThisFileDirectory)CityCodes.xml" />
+    <Content Include="$(MSBuildThisFileDirectory)Products.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="$(MSBuildThisFileDirectory)ProvinceCities.xml" />
   </ItemGroup>
 </Project>

@@ -1,0 +1,830 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ProductData>
+  <Product Name ="Analysis Charts">
+    <BaseURL>https://flightplanning.navcanada.ca/Latest/anglais/produits/analyses/altitude/</BaseURL>
+    <Option Name="Surface">
+      <Option2 Name="Latest">
+        <Code></Code>
+        <File>https://flightplanning.navcanada.ca/Latest/anglais/produits/analyses/altitude/option-anal500.png</File>
+      </Option2>
+      <Option2 Name="Previous">
+        <Code></Code>
+        <File>https://flightplanning.navcanada.ca/Latest/anglais/produits/analyses/altitude/option-anal500.png</File>
+      </Option2>
+    </Option>
+    <Option Name="850 mb (5 000')">
+      <Option2 Name="Latest">
+        <Code></Code>
+        <File>https://flightplanning.navcanada.ca/Latest/anglais/produits/analyses/altitude/option-anal500.png</File>
+      </Option2>
+      <Option2 Name="Previous">
+        <Code></Code>
+        <File>https://flightplanning.navcanada.ca/Latest/anglais/produits/analyses/altitude/option-anal500.png</File>
+      </Option2>
+    </Option>
+    <Option Name="700 mb (10 000')">
+      <Option2 Name="Latest">
+        <Code></Code>
+        <File>https://flightplanning.navcanada.ca/Latest/anglais/produits/analyses/altitude/option-anal500.png</File>
+      </Option2>
+      <Option2 Name="Previous">
+        <Code></Code>
+        <File>https://flightplanning.navcanada.ca/Latest/anglais/produits/analyses/altitude/option-anal500.png</File>
+      </Option2>
+    </Option>
+    <Option Name="500 mb (18 000')">
+      <Option2 Name="Latest">
+        <Code></Code>
+        <File>https://flightplanning.navcanada.ca/Latest/anglais/produits/analyses/altitude/option-anal500.png</File>
+      </Option2>
+      <Option2 Name="Previous">
+        <Code></Code>
+        <File>https://flightplanning.navcanada.ca/Latest/anglais/produits/analyses/altitude/option-anal500.png</File>
+      </Option2>      
+    </Option>
+    <Option Name="250 mb (34 000')">
+      <Option2 Name="Latest">
+        <Code></Code>
+        <File>https://flightplanning.navcanada.ca/Latest/anglais/produits/analyses/altitude/option-anal500.png</File>
+      </Option2>
+      <Option2 Name="Previous">
+        <Code></Code>
+        <File>https://flightplanning.navcanada.ca/Latest/anglais/produits/analyses/altitude/option-anal500.png</File>
+      </Option2>
+    </Option>
+  </Product>
+  
+  <Product Name ="Graphical Area Forecasts">
+    <BaseURL>https://flightplanning.navcanada.ca/Latest/gfa/anglais/produits/uprair/gfa/{CODE}/</BaseURL>
+    <Option Name="Arctic">
+      <Option2 Name="Clouds &amp; weather">
+        <Code>gfacn37</Code>
+      </Option2>
+      <Option2 Name="Icing, Turbulence &amp; Freezing Level">
+        <Code>gfacn37</Code>
+      </Option2>
+    </Option>
+    <Option Name="Atlantic">
+      <Option2 Name="Clouds &amp; weather">
+        <Code>gfacn34</Code>
+      </Option2>
+      <Option2 Name="Icing, Turbulence &amp; Freezing Level">
+        <Code>gfacn34</Code>
+      </Option2>
+    </Option>
+    <Option Name="Nunavut">
+      <Option2 Name="Clouds &amp; weather">
+        <Code>gfacn36</Code>
+      </Option2>
+      <Option2 Name="Icing, Turbulence &amp; Freezing Level">
+        <Code>gfacn36</Code>
+      </Option2>
+    </Option>
+    <Option Name="Ontario &amp; Quebec">
+      <Option2 Name="Clouds &amp; weather">
+        <Code>gfacn33</Code>
+      </Option2>
+      <Option2 Name="Icing, Turbulence &amp; Freezing Level">
+        <Code>gfacn33</Code>
+      </Option2>
+    </Option>
+    <Option Name="Pacific">
+      <Option2 Name="Clouds &amp; weather">
+        <Code>gfacn31</Code>
+      </Option2>
+      <Option2 Name="Icing, Turbulence &amp; Freezing Level">
+        <Code>gfacn31</Code>
+      </Option2>
+    </Option>
+    <Option Name="Prairies">
+      <Option2 Name="Clouds &amp; weather">
+        <Code>gfacn32</Code>
+      </Option2>
+      <Option2 Name="Icing, Turbulence &amp; Freezing Level">
+        <Code>gfacn32</Code>
+      </Option2>
+    </Option>
+    <Option Name="Yukon &amp; NWT">
+      <Option2 Name="Clouds &amp; weather">
+        <Code>gfacn35</Code>
+      </Option2>
+      <Option2 Name="Icing, Turbulence &amp; Freezing Level">
+        <Code>gfacn35</Code>
+      </Option2>
+    </Option>
+  </Product>
+  
+  <!--What is the third option box going to display in this case?-->
+  <Product Name ="Lightning Map">
+    <BaseURL>http://weather.gc.ca/data/lightning_images//</BaseURL>
+    <Option Name="Arctic">
+      <Code>ARC</Code>
+    </Option>
+    <Option Name="Atlantic">
+      <Code>ATL</Code>
+    </Option>
+    <Option Name="Ontario">
+      <Code>ONT</Code>
+    </Option>
+    <Option Name="Pacific">
+      <Code>PAC</Code>
+    </Option>
+    <Option Name="Prairies">
+      <Code>WRN</Code>
+    </Option>
+    <Option Name="Quebec">
+      <Code>QUE</Code>
+    </Option>
+  </Product>
+  
+  <Product Name ="Local Graphic Forecasts (West Coast)">
+    <BaseURL>https://flightplanning.navcanada.ca/Latest/lgf/anglais/produits/uprair/lgf/zvr/{CODE}/</BaseURL>
+    <Option Name="North Coast">
+	<Code>43</Code>
+    </Option>
+    <Option Name="Central Coast">
+	<Code>42</Code>
+    </Option>
+    <Option Name="South Coast">
+	<Code>41</Code>
+    </Option>
+  </Product>
+  
+  <Product Name ="Weather Cameras">
+  <BaseURL>http://www.metcam.navcanada.ca/dawc_images/wxcam/{CODE}/</BaseURL>
+  <Option Name = "Alberta">
+	  <Option2 Name="Calgary/Springbank">
+		  <Dir>N,E,S,W</Dir>
+		  <Code>CYBW</Code>
+	  </Option2>
+	  <Option2 Name="Crowsnest Pass">
+		  <Dir>SE,W</Dir>
+		  <Code>TM19</Code>
+	  </Option2>
+	  <Option2 Name="Edmonton/Villeneuve">
+		  <Dir>NE, SE, SW, NW</Dir>
+		  <Code>CZVL</Code>
+	  </Option2>
+	  <Option2 Name="Edson">
+		  <Dir>E,W</Dir>
+		  <Code>CYET</Code>
+	  </Option2>
+	  <Option2 Name="Fort Chipewyan">
+		  <Dir>NE,W</Dir>
+		  <Code>CYPY</Code>
+	  </Option2>
+	  <Option2 Name="Fort McMurray">
+		  <Dir>SE,NW</Dir>
+		  <Code>CYMM</Code>
+	  </Option2>
+	  <Option2 Name="High Level">
+		  <Dir>N,SE</Dir>
+		  <Code>CYOJ</Code>
+	  </Option2>
+	  <Option2 Name="Jasper-Hinton">
+		  <Dir>NE,S</Dir>
+		  <Code>CEC4</Code>
+	  </Option2>
+	  <Option2 Name="Lethbridge">
+		  <Dir>NE,SE,SW,NW</Dir>
+		  <Code>CYQL</Code>
+	  </Option2>
+	  <Option2 Name="Lloydminster">
+		  <Dir>NE,SE,W</Dir>
+		  <Code>CYLL</Code>
+	  </Option2>
+	  <Option2 Name="Medicine Hat">
+		  <Dir>N,E,S,W</Dir>
+		  <Code>CYXH</Code>
+	  </Option2>
+	  <Option2 Name="Pincher Creek">
+		  <Dir>E,W</Dir>
+		  <Code>CZPC</Code>
+	  </Option2>
+	  <Option2 Name="Rocky Mountain House">
+		  <Dir>N,SE,SW</Dir>
+		  <Code>CYRM</Code>
+	  </Option2>
+	  <Option2 Name="Slave Lake">
+		  <Dir>S,W</Dir>
+		  <Code>CYZH</Code>
+	  </Option2>
+  </Option>
+
+  <Option Name = "British Columbia">
+	  <Option2 Name="Addenbroke Island Lightstation">
+		  <Dir>SW,NW</Dir>
+		  <Code>TM17</Code>
+	  </Option2>
+	  <Option2 Name="Alert Bay">
+		  <Dir>NE,W</Dir>
+		  <Code>CYAL</Code>
+	  </Option2>
+	  <Option2 Name="Amphitrite Point Lighthouse">
+		  <Dir>E,W</Dir>
+		  <Code>TM13</Code>
+	  </Option2>
+	  <Option2 Name="Anahim Lake">
+		  <Dir>SE,W</Dir>
+		  <Code>CAJ4</Code>
+	  </Option2>
+	  <Option2 Name="Atlin">
+		  <Dir>E,S</Dir>
+		  <Code>CYSQ</Code>
+	  </Option2>
+	  <Option2 Name="Bella Bella">
+		  <Dir>N,SE</Dir>
+		  <Code>CBBC</Code>
+	  </Option2>
+	  <Option2 Name="Bella Coola">
+		  <Dir>NE,SW</Dir>
+		  <Code>CYBD</Code>
+	  </Option2>
+	  <Option2 Name="Bob Quinn Lake">
+		  <Dir>N,SE</Dir>
+		  <Code>CBW4</Code>
+	  </Option2>
+	  <Option2 Name="Buckinghorse River (Sikanni Chief)">
+		  <Dir>NE,S</Dir>
+		  <Code>TM23</Code>
+	  </Option2>
+	  <Option2 Name="Burns Lake">
+		  <Dir>SE,W</Dir>
+		  <Code>CYPZ</Code>
+	  </Option2>
+	  <Option2 Name="Chatham Point Lightstation">
+		  <Dir>E,NW</Dir>
+		  <Code>TM02</Code>
+	  </Option2>
+	  <Option2 Name="Cheakamus Canyon Tower">
+		  <Dir>N,SE</Dir>
+		  <Code>TM05</Code>
+	  </Option2>
+	  <Option2 Name="Clearwater">
+		  <Dir>NE,SW,NW</Dir>
+		  <Code>TM15</Code>
+	  </Option2>
+	  <Option2 Name="Clinton-Bleibler Ranch">
+		  <Dir>SE,NW</Dir>
+		  <Code>CYIN</Code>
+	  </Option2>
+	  <Option2 Name="Dawson Creek">
+		  <Dir>NE,SW,NW</Dir>
+		  <Code>CYDQ</Code>
+	  </Option2>
+	  <Option2 Name="Dease Lake">
+		  <Dir>E,SW</Dir>
+		  <Code>CYDL</Code>
+	  </Option2>
+	  <Option2 Name="Fort Ware">
+		  <Dir>SE,NW</Dir>
+		  <Code>CAJ9</Code>
+	  </Option2>
+	  <Option2 Name="Fraser Camp">
+		  <Dir>E,S</Dir>
+		  <Code>TM14</Code>
+	  </Option2>
+	  <Option2 Name="Garibaldi Tower">
+		  <Dir>NE,S</Dir>
+		  <Code>TM06</Code>
+	  </Option2>
+	  <Option2 Name="Golden">
+		  <Dir>N,SE</Dir>
+		  <Code>CYGE</Code>
+	  </Option2>
+	  <Option2 Name="Hope">
+		  <Dir>E,W</Dir>
+		  <Code>CYHE</Code>
+	  </Option2>
+	  <Option2 Name="Invermere">
+		  <Dir>N,S</Dir>
+		  <Code>CAA8</Code>
+	  </Option2>
+	  <Option2 Name="Kelowna">
+		  <Dir>N,SW</Dir>
+		  <Code>CYLW</Code>
+	  </Option2>
+	  <Option2 Name="Lillooet">
+		  <Dir>N,S,W</Dir>
+		  <Code>CYLI</Code>
+	  </Option2>
+	  <Option2 Name="Lytton">
+		  <Dir>S,NW</Dir>
+		  <Code>CWLY</Code>
+	  </Option2>
+	  <Option2 Name="Mackenzie">
+		  <Dir>NE,S</Dir>
+		  <Code>CYZY</Code>
+	  </Option2>
+	  <Option2 Name="Manning Provincial Park">
+		  <Dir>E,NW</Dir>
+		  <Code>TM03</Code>
+	  </Option2>
+	  <Option2 Name="Merritt">
+		  <Dir>NE,SW</Dir>
+		  <Code>CAD5</Code>
+	  </Option2>
+	  <Option2 Name="Muncho Lake">
+		  <Dir>N,SW</Dir>
+		  <Code>CWWQ</Code>
+	  </Option2>
+	  <Option2 Name="Nanaimo Harbour">
+		  <Dir>N,NE,SE</Dir>
+		  <Code>TM12</Code>
+	  </Option2>
+	  <Option2 Name="Pemberton">
+		  <Dir>E,W</Dir>
+		  <Code>CYPS</Code>
+	  </Option2>
+	  <Option2 Name="Port Alberni">
+		  <Dir>E,NW</Dir>
+		  <Code>CBS8</Code>
+	  </Option2>
+	  <Option2 Name="Powell River">
+		  <Dir>SE,W</Dir>
+		  <Code>CYPW</Code>
+	  </Option2>
+	  <Option2 Name="Prince George">
+		  <Dir>NE,SE,W</Dir>
+		  <Code>CYXS</Code>
+	  </Option2>
+	  <Option2 Name="Prince Rupert">
+		  <Dir>E,S,NW</Dir>
+		  <Code>CYPR</Code>
+	  </Option2>
+	  <Option2 Name="Quesnel">
+		  <Dir>S,W,NW</Dir>
+		  <Code>CYQZ</Code>
+	  </Option2>
+	  <Option2 Name="Revelstoke">
+		  <Dir>NE,S,NW</Dir>
+		  <Code>CYRV</Code>
+	  </Option2>
+	  <Option2 Name="Salmon Arm">
+		  <Dir>NE,SE</Dir>
+		  <Code>CZAM</Code>
+	  </Option2>
+	  <Option2 Name="Salt Spring Island (Ganges Harbour)">
+		  <Dir>N,E,S </Dir>
+		  <Code>TM21</Code>
+	  </Option2>
+	  <Option2 Name="Sandspit">
+		  <Dir>SE,W</Dir>
+		  <Code>CYZP</Code>
+	  </Option2>
+	  <Option2 Name="Saturna Island (East Point)">
+		  <Dir>N,E,SW</Dir>
+		  <Code>TM20</Code>
+	  </Option2>
+	  <Option2 Name="Seal Cove (Prince Rupert)">
+		  <Dir>N,SE,NW</Dir>
+		  <Code>CBY5</Code>
+	  </Option2>
+	  <Option2 Name="Smithers">
+		  <Dir>SE,NW</Dir>
+		  <Code>CYYD</Code>
+	  </Option2>
+	  <Option2 Name="Squamish">
+		  <Dir>N,S</Dir>
+		  <Code>CYSE</Code>
+	  </Option2>
+	  <Option2 Name="Tsay Keh">
+		  <Dir>SE,SW,NW</Dir>
+		  <Code>CBN9</Code>
+	  </Option2>
+	  <Option2 Name="Vernon">
+		  <Dir>NE,SW</Dir>
+		  <Code>CYVK</Code>
+	  </Option2>
+	  <Option2 Name="West vancouver">
+		  <Dir>E,W</Dir>
+		  <Code>TM18</Code>
+	  </Option2>
+	  <Option2 Name="Whistler Heliport">
+		  <Dir>SE,SW </Dir>
+		  <Code>CBE9</Code>
+	  </Option2>
+	  <Option2 Name="Whister Radar">
+		  <Dir>N,NE,S </Dir>
+		  <Code>TM07</Code>
+	  </Option2>
+  </Option>
+
+  <Option Name = "Manitoba	Berens River">	CYBV	E,W
+	  <Option2 Name="Berens River">
+		  <Dir>E,W</Dir>
+		  <Code>CYBV</Code>
+	  </Option2>
+	  <Option2 Name="Churchill">
+		  <Dir>N,E,S,NW</Dir>
+		  <Code>CYYQ</Code>
+	  </Option2>
+	  <Option2 Name="Dauphin">
+		  <Dir>N,SE,SW</Dir>
+		  <Code>CYDN</Code>
+	  </Option2>
+	  <Option2 Name="Flin Flon">
+		  <Dir>SW,NW</Dir>
+		  <Code>CYFO</Code>
+	  </Option2>
+	  <Option2 Name="Lynn Lake">
+		  <Dir>N,S</Dir>
+		  <Code>CYYL</Code>
+	  </Option2>
+	  <Option2 Name="Norway House">
+		  <Dir>NE,SE,SW,NW</Dir>
+		  <Code>CYNE</Code>
+	  </Option2>
+	  <Option2 Name="Swan River">
+		  <Dir>N,S</Dir>
+		  <Code>CZJN</Code>
+	  </Option2>
+	  <Option2 Name="Tadoule Lake">
+		  <Dir>E,W</Dir>
+		  <Code>CYBQ</Code>
+	  </Option2>
+  </Option>
+
+  <Option Name = "New Brunswick">
+	  <Option2 Name="Fredericton">
+		  <Dir>E,SW,W</Dir>
+		  <Code>CYFC</Code>
+	  </Option2>
+	  <Option2 Name="Miramichi">
+		  <Dir>E,S</Dir>
+		  <Code>CYCH</Code>
+	  </Option2>
+	  <Option2 Name="St Stephen">
+		  <Dir>S,W</Dir>
+		  <Code>CCS3</Code>
+	  </Option2>
+  </Option>
+
+  <Option Name = "Newfoundland &amp; Labrador">
+	  <Option2 Name="Churchill Falls">
+		  <Dir>E,NW</Dir>
+		  <Code>CZUM</Code>
+	  </Option2>
+	  <Option2 Name="Mary's Harbour">
+		  <Dir>N,E,S,W</Dir>
+		  <Code>CYMH</Code>
+	  </Option2>
+	  <Option2 Name="Natuashish">
+		  <Dir>NE,NW</Dir>
+		  <Code>CNH2</Code>
+	  </Option2>
+	  <Option2 Name="Rigolet">
+		  <Dir>NE,NW</Dir>
+		  <Code>CCZ2</Code>
+	  </Option2>
+	  <Option2 Name="St Anthony">
+		  <Dir>NE,S,NW</Dir>
+		  <Code>CYAY</Code>
+	  </Option2>
+	  <Option2 Name="Wabush">
+		  <Dir>N,SE,SW,W</Dir>
+		  <Code>CYWK</Code>
+	  </Option2>
+	  <Option2 Name="Winterland">
+		  <Dir>S,W</Dir>
+		  <Code>CCC2</Code>
+	  </Option2>
+  </Option>
+
+  <Option Name = "Northwest Territories">
+	  <Option2 Name="Colville Lake/Tommy Kochon">
+		  <Dir>N,E,S,W</Dir>
+		  <Code>CYVL</Code>
+	  </Option2>
+	  <Option2 Name="Wekweeti">
+		  <Dir>SE,SW,W</Dir>
+		  <Code>CYWE</Code>
+	  </Option2>
+  </Option>
+
+  <Option Name = "Nova Scotia">
+	  <Option2 Name="Debert">
+		  <Dir>NE,S</Dir>
+		  <Code>CCQ3</Code>
+	  </Option2>
+	  <Option2 Name="Digby">
+		  <Dir>E,S</Dir>
+		  <Code>CYID</Code>
+	  </Option2>
+	  <Option2 Name="Port Hawkesbury">
+		  <Dir>E,W</Dir>
+		  <Code>CYPD</Code>
+	  </Option2>
+	  <Option2 Name="Sable Island">
+		  <Dir>SE</Dir>
+		  <Code>CWSA</Code>
+	  </Option2>
+	  <Option2 Name="Trenton">
+		  <Dir>E,SW</Dir>
+		  <Code>CYTN</Code>
+	  </Option2>
+	  <Option2 Name="Waterville">
+		  <Dir>E,SW</Dir>
+		  <Code>CCW3</Code>
+	  </Option2>
+  </Option>
+
+  <Option Name = "Nunavut">
+	  <Option2 Name="Clyde River">
+		  <Dir>N,SW</Dir>
+		  <Code>CYCY</Code>
+	  </Option2>
+	  <Option2 Name="Gjoa Haven">
+		  <Dir>SE,SW,NW</Dir>
+		  <Code>CYHK</Code>
+	  </Option2>
+	  <Option2 Name="Pangnirtung">
+		  <Dir>NE,SW,NW</Dir>
+		  <Code>CYXP</Code>
+	  </Option2>
+	  <Option2 Name="Pond Inlet">
+		  <Dir>N,SW</Dir>
+		  <Code>CYIO</Code>
+	  </Option2>
+	  <Option2 Name="Qikiqtarjuaq">
+		  <Dir>NE,SW</Dir>
+		  <Code>CYVM</Code>
+	  </Option2>	
+  </Option>	
+
+  <Option Name = "Ontario">	
+	  <Option2 Name="Arnprior">
+		  <Dir>SE,SW,NW</Dir>
+		  <Code>CNP3</Code>
+	  </Option2>
+	  <Option2 Name="Attawapiskat">
+		  <Dir>N,E,S,W</Dir>
+		  <Code>CYAT</Code>
+	  </Option2>
+	  <Option2 Name="Bancroft">
+		  <Dir>E,NW</Dir>
+		  <Code>CNW3</Code>
+	  </Option2>
+	  <Option2 Name="Big Trout Lake">
+		  <Dir>SE,NW</Dir>
+		  <Code>CYTL</Code>
+	  </Option2>
+	  <Option2 Name="Billy Bishop Toronty City">
+		  <Dir>E,SE,SW</Dir>
+		  <Code>CYTZ</Code>
+	  </Option2>
+	  <Option2 Name="Brockville">
+		  <Dir>N,SW</Dir>
+		  <Code>CNL3</Code>
+	  </Option2>
+	  <Option2 Name="Burlington Airpark">
+		  <Dir>S,W</Dir>
+		  <Code>CZBA</Code>
+	  </Option2>
+	  <Option2 Name="Centralia">
+		  <Dir>SE,SW,NW</Dir>
+		  <Code>CYCE</Code>
+	  </Option2>
+	  <Option2 Name="Chatham/Kent">
+		  <Dir>N,E,S,W</Dir>
+		  <Code>CYCK</Code>
+	  </Option2>
+	  <Option2 Name="Collingwood">
+		  <Dir>N,E,W</Dir>
+		  <Code>CNY3</Code>
+	  </Option2>
+	  <Option2 Name="Cornwall">
+		  <Dir>NE,NW</Dir>
+		  <Code>CYCC</Code>
+	  </Option2>
+	  <Option2 Name="Dryden Regional">
+		  <Dir>N,E,SE,SW</Dir>
+		  <Code>CYHD</Code>
+	  </Option2>
+	  <Option2 Name="Earlton">
+		  <Dir>E,SW</Dir>
+		  <Code>CYXR</Code>
+	  </Option2>
+	  <Option2 Name="Elliot Lake">
+		  <Dir>S,W</Dir>
+		  <Code>CYEL</Code>
+	  </Option2>
+	  <Option2 Name="Fort Severn">
+		  <Dir>N,S</Dir>
+		  <Code>CYER</Code>
+	  </Option2>
+	  <Option2 Name="Gore Bay">
+		  <Dir>N,SE,SW</Dir>
+		  <Code>CYZE</Code>
+	  </Option2>
+	  <Option2 Name="Hanover">
+		  <Dir>SW,NW</Dir>
+		  <Code>CPN4</Code>
+	  </Option2>
+	  <Option2 Name="Hearst">
+		  <Dir>NE,SE</Dir>
+		  <Code>CYHF</Code>
+	  </Option2>
+	  <Option2 Name="Kincardine">
+		  <Dir>S,W</Dir>
+		  <Code>CNS7</Code>
+	  </Option2>
+	  <Option2 Name="Kitchener/Waterloo">
+		  <Dir>N,E,W</Dir>
+		  <Code>CYKF</Code>
+	  </Option2>
+	  <Option2 Name="Lansdowne House">
+		  <Dir>E,W</Dir>
+		  <Code>CYLH</Code>
+	  </Option2>
+	  <Option2 Name="Moosonee">
+		  <Dir>NE,SW</Dir>
+		  <Code>CYMO</Code>
+	  </Option2>
+	  <Option2 Name="Muskoka">
+		  <Dir>N,E</Dir>
+		  <Code>CYQA</Code>
+	  </Option2>
+	  <Option2 Name="Muskrat Dam">
+		  <Dir>NE,SW</Dir>
+		  <Code>CZMD</Code>
+	  </Option2>
+	  <Option2 Name="North Bay">
+		  <Dir>N,E,S,W</Dir>
+		  <Code>CYYB</Code>
+	  </Option2>
+	  <Option2 Name="Ogoki Post">
+		  <Dir>N,E,S,W</Dir>
+		  <Code>CYKP</Code>
+	  </Option2>
+	  <Option2 Name="Oshawa">
+		  <Dir>N,NE,NW</Dir>
+		  <Code>CYOO</Code>
+	  </Option2>
+	  <Option2 Name="Parry Sound">
+		  <Dir>SW,NW</Dir>
+		  <Code>CNK4</Code>
+	  </Option2>
+	  <Option2 Name="Peawanuck">
+		  <Dir>N,E,S,W</Dir>
+		  <Code>CYPO</Code>
+	  </Option2>
+	  <Option2 Name="Peterborough">
+		  <Dir>N,W</Dir>
+		  <Code>CYPQ</Code>
+	  </Option2>
+	  <Option2 Name="Sandy lake">
+		  <Dir>E,NW</Dir>
+		  <Code>CZSJ</Code>
+	  </Option2>
+	  <Option2 Name="Sarnia">
+		  <Dir>N,E</Dir>
+		  <Code>CYZR</Code>
+	  </Option2>
+	  <Option2 Name="Smiths Falls">
+		  <Dir>E,S</Dir>
+		  <Code>CYSH</Code>
+	  </Option2>
+	  <Option2 Name="St Thomas">
+		  <Dir>SE,SW</Dir>
+		  <Code>CYQS</Code>
+	  </Option2>
+	  <Option2 Name="Thunder Bay">
+		  <Dir>N,E,S,W</Dir>
+		  <Code>CYQT</Code>
+	  </Option2>	
+  </Option>	
+
+  <Option Name = "Quebec">	
+	  <Option2 Name="Baie-Comeau">
+		  <Dir>N,E,SW</Dir>
+		  <Code>CYBC</Code>
+	  </Option2>
+	  <Option2 Name="Bonaventure">
+		  <Dir>E,W</Dir>
+		  <Code>CYVB</Code>
+	  </Option2>
+	  <Option2 Name="Charlevoix">
+		  <Dir>N,SE</Dir>
+		  <Code>CYML</Code>
+	  </Option2>
+	  <Option2 Name="Chevery">
+		  <Dir>NE,W</Dir>
+		  <Code>CYHR</Code>
+	  </Option2>
+	  <Option2 Name="Havre St-Pierre">
+		  <Dir>E,S,W</Dir>
+		  <Code>CYGV</Code>
+	  </Option2>
+	  <Option2 Name="Inukjuak">
+		  <Dir>E,SW,W,NW</Dir>
+		  <Code>CYPH</Code>
+	  </Option2>
+	  <Option2 Name="Kuujjuarapik">
+		  <Dir>N,W</Dir>
+		  <Code>CYGW</Code>
+	  </Option2>
+	  <Option2 Name="La Grande-4">
+		  <Dir>E,SW</Dir>
+		  <Code>CYAH</Code>
+	  </Option2>
+	  <Option2 Name="La Macaza/Mont-Tremblant">
+		  <Dir>N,S</Dir>
+		  <Code>CYFJ</Code>
+	  </Option2>
+	  <Option2 Name="La Tuque">
+		  <Dir>N,SW</Dir>
+		  <Code>CYLQ</Code>
+	  </Option2>
+	  <Option2 Name="Maniwaki">
+		  <Dir>NE,S</Dir>
+		  <Code>CYMW</Code>
+	  </Option2>
+	  <Option2 Name="Matagami">
+		  <Dir>S,NW</Dir>
+		  <Code>CYNM</Code>
+	  </Option2>
+	  <Option2 Name="Mont-Laurier">
+		  <Dir>N,W</Dir>
+		  <Code>CSD4</Code>
+	  </Option2>
+	  <Option2 Name="Matashquan">
+		  <Dir>SE,SW,NW</Dir>
+		  <Code>CYNA</Code>
+	  </Option2>
+	  <Option2 Name="Port Menier">
+		  <Dir>E,SW</Dir>
+		  <Code>CYPN</Code>
+	  </Option2>
+	  <Option2 Name="Puvirnituq">
+		  <Dir>N,SE,SW,NW</Dir>
+		  <Code>CYPX</Code>
+	  </Option2>
+	  <Option2 Name="Schefferville">
+		  <Dir>S,NW</Dir>
+		  <Code>CYKL</Code>
+	  </Option2>
+	  <Option2 Name="Sherbrooke">
+		  <Dir>SE,W</Dir>
+		  <Code>CYSC</Code>
+	  </Option2>
+	  <Option2 Name="St-Georges">
+		  <Dir>N,SW</Dir>
+		  <Code>CYSG</Code>
+	  </Option2>
+	  <Option2 Name="St-Hubert">
+		  <Dir>NE,SW</Dir>
+		  <Code>CYHU</Code>
+	  </Option2>
+	  <Option2 Name="Trois Rivieres">
+		  <Dir>NE,SE,SW,NW</Dir>
+		  <Code>CYRQ</Code>
+	  </Option2>
+	  <Option2 Name="Val d'Or">
+		  <Dir>NE,SE,SW,NW</Dir>
+		  <Code>CYVO</Code>
+	  </Option2>	
+  </Option>
+
+  <Option Name = "Saskatchewan">
+	  <Option2 Name="Key Lake">
+		  <Dir>NE,SW</Dir>
+		  <Code>CYKJ</Code>
+	  </Option2>
+	  <Option2 Name="Nipawin">
+		  <Dir>N,W</Dir>
+		  <Code>CYBU</Code>
+	  </Option2>
+	  <Option2 Name="North Battleford">
+		  <Dir>N,E</Dir>
+		  <Code>CYQW</Code>
+	  </Option2>
+	  <Option2 Name="Stony Rapid">
+		  <Dir>E,SW</Dir>
+		  <Code>CYSF</Code>
+	  </Option2>
+	  <Option2 Name="Swift Current">
+		  <Dir>E,NW</Dir>
+		  <Code>CYYN</Code>
+	  </Option2>
+	  <Option2 Name="Yorkton">
+		  <Dir>NE,W</Dir>
+		  <Code>CYQV</Code>
+	  </Option2>	
+  </Option>
+
+  <Option Name = "Yukon">
+	  <Option2 Name="Carmacks">
+		  <Dir>SE,W</Dir>
+		  <Code>CEX4></Code>
+	  </Option2>
+	  <Option2 Name="Haines Junction">
+		  <Dir>E,NW</Dir>
+		  <Code>CYHT</Code>
+	  </Option2>
+	  <Option2 Name="Swift River/Rancheria">	<Dir>NE,W</Dir>
+		  <Code>TM22</Code>
+	  </Option2>	
+  </Option>
+  </Product>
+</ProductData>
