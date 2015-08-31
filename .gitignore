@@ -9,12 +9,12 @@
 
 # Build results
 
-[Dd]ebug/
+Debug/
 [Rr]elease/
 x64/
 build/
-[Bb]in/
-[Oo]bj/
+bin/
+obj/
 
 # Enable "build/" folder in the NuGet Packages folder since NuGet packages use it for MSBuild targets
 !packages/*/build/
@@ -155,3 +155,5 @@ $RECYCLE.BIN/
 
 # Mac desktop service store files
 .DS_Store
+*.exe
+*.xbf
