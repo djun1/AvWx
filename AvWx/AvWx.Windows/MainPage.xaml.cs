@@ -105,32 +105,7 @@ namespace AvWx
             GenericCodeClass.IsAppResuming = false;
             await GetFileNamesTask;
 
-            DownloadFilesTask = DownloadFiles();
-
-            //switch (GenericCodeClass.SatelliteTypeString)
-            //{
-            //    case "ir4":
-            //    case "alir":
-            //    case "1070":
-            //    case "03":
-            //        SatelliteProduct = "Infrared";
-            //        break;
-            //    case "rb":
-            //        SatelliteProduct = "Rainbow";
-            //        break;
-            //    case "avn":
-            //        SatelliteProduct = "Aviation";
-            //        break;
-            //    case "rgb":
-            //        SatelliteProduct = "RGB";
-            //        break;
-            //    case "vis":
-            //    case "alvs":
-            //    case "visible":
-            //    case "nir":
-            //        SatelliteProduct = "Visible";
-            //        break;
-            //}
+            DownloadFilesTask = DownloadFiles();            
 
             LoopTimer.Interval = GenericCodeClass.LoopInterval; //Create a timer that trigger every 1 s
             DownloadTimer.Interval = GenericCodeClass.DownloadInterval; //Create a timer that triggers every 30 min
@@ -403,32 +378,7 @@ namespace AvWx
 
             if (GenericCodeClass.IsLoopPaused == false)
                 LoopTimer.Stop();
-
-            //switch (GenericCodeClass.SatelliteTypeString)
-            //{
-            //    case "ir4":
-            //    case "alir":
-            //    case "1070":
-            //    case "03":
-            //        SatelliteProduct = "Infrared";
-            //        break;
-            //    case "rb":
-            //        SatelliteProduct = "Rainbow";
-            //        break;
-            //    case "avn":
-            //        SatelliteProduct = "Aviation";
-            //        break;
-            //    case "rgb":
-            //        SatelliteProduct = "RGB";
-            //        break;
-            //    case "vis":
-            //    case "alvs":
-            //    case "visible":
-            //    case "nir":
-            //        SatelliteProduct = "Visible";
-            //        break;
-            //}
-
+            
             GetFileNamesTask = GenericCodeClass.GetListOfLatestFiles(Files);
 
             if (GenericCodeClass.SettingsChanged == true)
