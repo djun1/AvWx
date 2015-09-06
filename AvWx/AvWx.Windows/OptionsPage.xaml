@@ -26,7 +26,7 @@
                 <RadioButton x:Name="CountryRadioButton1" Grid.Column="0" Content="Canada" GroupName="CountryBoxes" />
                 <RadioButton x:Name="CountryRadioButton2" Grid.Column="1" Content="USA" GroupName="CountryBoxes" />
             </Grid>-->
-            <ComboBox x:Name="ProductComboBox" Margin="0,12,0,0" Padding="10,0,27,0" SelectionChanged="ProductComboBox_SelectionChanged" SelectedIndex="0">
+            <ComboBox x:Name="ProductComboBox" Margin="0,12,0,0" Padding="10,0,27,0" SelectionChanged="ProductComboBox_SelectionChanged">
                 <x:String></x:String>
             </ComboBox>
             <ComboBox x:Name="RegionComboBox" Margin="0,12,0,0" Padding="10,0,27,0"/>

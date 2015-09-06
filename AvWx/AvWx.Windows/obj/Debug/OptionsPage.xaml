@@ -26,12 +26,12 @@
                 <RadioButton x:Name="CountryRadioButton1" Grid.Column="0" Content="Canada" GroupName="CountryBoxes" />
                 <RadioButton x:Name="CountryRadioButton2" Grid.Column="1" Content="USA" GroupName="CountryBoxes" />
             </Grid>-->
-            <ComboBox x:ConnectionId='2' x:Name="ProvinceComboBox" Margin="0,12,0,0" Padding="10,0,27,0"                                                      SelectedIndex="0">
+            <ComboBox x:ConnectionId='2' x:Name="ProductComboBox" Margin="0,12,0,0" Padding="10,0,27,0"                                                    >
                 <x:String></x:String>
             </ComboBox>
-            <ComboBox x:Name="StationComboBox" Margin="0,12,0,0" Padding="10,0,27,0"/>
-            <ComboBox x:Name="TypeComboBox" Margin="0,12,0,0" Padding="10,0,27,0">
-            </ComboBox>
+            <ComboBox x:Name="RegionComboBox" Margin="0,12,0,0" Padding="10,0,27,0"/>
+            <ComboBox x:ConnectionId='3' x:Name="StationOrTypeComboBox" Margin="0,12,0,0" Padding="10,0,27,0"                                                          />
+            <ComboBox x:Name="DirComboBox" Margin="0,12,0,0" Padding="10,0,27,0"/>
 
             <TextBlock Style="{StaticResource TitleTextBlockStyle}" x:Name="ProductName" Text="Satellite Product" Margin="0,24,0,0"/>
             <Grid Margin="0,12,0,0">

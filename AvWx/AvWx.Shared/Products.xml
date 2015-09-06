@@ -5,51 +5,41 @@
     <Option Name="Surface">
       <Option2 Name="Latest">
         <Code></Code>
-        <File>https://flightplanning.navcanada.ca/Latest/anglais/produits/analyses/altitude/option-anal500.png</File>
       </Option2>
       <Option2 Name="Previous">
         <Code></Code>
-        <File>https://flightplanning.navcanada.ca/Latest/anglais/produits/analyses/altitude/option-anal500.png</File>
       </Option2>
     </Option>
     <Option Name="850 mb (5 000')">
       <Option2 Name="Latest">
         <Code></Code>
-        <File>https://flightplanning.navcanada.ca/Latest/anglais/produits/analyses/altitude/option-anal500.png</File>
       </Option2>
       <Option2 Name="Previous">
         <Code></Code>
-        <File>https://flightplanning.navcanada.ca/Latest/anglais/produits/analyses/altitude/option-anal500.png</File>
       </Option2>
     </Option>
     <Option Name="700 mb (10 000')">
       <Option2 Name="Latest">
         <Code></Code>
-        <File>https://flightplanning.navcanada.ca/Latest/anglais/produits/analyses/altitude/option-anal500.png</File>
       </Option2>
       <Option2 Name="Previous">
         <Code></Code>
-        <File>https://flightplanning.navcanada.ca/Latest/anglais/produits/analyses/altitude/option-anal500.png</File>
       </Option2>
     </Option>
     <Option Name="500 mb (18 000')">
       <Option2 Name="Latest">
         <Code></Code>
-        <File>https://flightplanning.navcanada.ca/Latest/anglais/produits/analyses/altitude/option-anal500.png</File>
       </Option2>
       <Option2 Name="Previous">
         <Code></Code>
-        <File>https://flightplanning.navcanada.ca/Latest/anglais/produits/analyses/altitude/option-anal500.png</File>
       </Option2>      
     </Option>
     <Option Name="250 mb (34 000')">
       <Option2 Name="Latest">
         <Code></Code>
-        <File>https://flightplanning.navcanada.ca/Latest/anglais/produits/analyses/altitude/option-anal500.png</File>
       </Option2>
       <Option2 Name="Previous">
         <Code></Code>
-        <File>https://flightplanning.navcanada.ca/Latest/anglais/produits/analyses/altitude/option-anal500.png</File>
       </Option2>
     </Option>
   </Product>

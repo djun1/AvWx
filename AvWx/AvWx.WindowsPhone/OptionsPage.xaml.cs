@@ -116,6 +116,8 @@ namespace AvWx
         {
             ChosenProductName = ProductComboBox.Items[ProductComboBox.SelectedIndex].ToString();
             ChosenRegionName = RegionComboBox.Items[RegionComboBox.SelectedIndex].ToString();
+            ChosenStationOrTypeName = null;
+            ChosenDirName = null;
             string HomeURL = null;
 
             GenericCodeClass.SettingsChanged = !ChosenProductName.Equals(GenericCodeClass.ChosenProductString)
@@ -195,7 +197,7 @@ namespace AvWx
             if (ProductComboBox != null)
             {
                 SetOptions();
-                PopulateRegionBox(ProductComboBox.SelectedIndex, ProductComboBox.Items[ProductComboBox.SelectedIndex].ToString(), false);
+                PopulateRegionBox(ProductComboBox.SelectedIndex, ProductComboBox.Items[ProductComboBox.SelectedIndex].ToString());//, false);
             }
         }
 
@@ -212,7 +214,7 @@ namespace AvWx
                 DirComboBox.Items.Clear();
         }
 
-        private void PopulateRegionBox(int ProductBoxIndex, string ProductName, bool UseHomeStationValue)
+        private void PopulateRegionBox(int ProductBoxIndex, string ProductName)//, bool UseHomeStationValue)
         {
 
             if (RegionComboBox != null)
@@ -221,6 +223,7 @@ namespace AvWx
 
                 RegionComboBox.SelectionChanged -= RegionComboBox_SelectionChanged;
 
+                //Ashwin - is this needed?
                 if (ProductName.Contains('&'))
                     ProductName = ProductName.Substring(0, 12);
 
@@ -233,14 +236,14 @@ namespace AvWx
                 }
 
                 RegionComboBox.SelectionChanged += RegionComboBox_SelectionChanged;
-                if (UseHomeStationValue)
+                if (RegionComboBox.Items.Contains(GenericCodeClass.ChosenRegionString))
                     RegionComboBox.SelectedItem = GenericCodeClass.ChosenRegionString;
                 else
                     RegionComboBox.SelectedIndex = 0;
             }
         }
 
-        private void PopulateStationOrTypeBox(int ProductBoxIndex, string ProductName, string StationName, bool UseHomeStationValue)
+        private void PopulateStationOrTypeBox(int ProductBoxIndex, string ProductName, string StationName)//, bool UseHomeStationValue)
         {
 
             if (StationOrTypeComboBox != null)
@@ -261,20 +264,23 @@ namespace AvWx
                 }
 
                 StationOrTypeComboBox.SelectionChanged += StationOrTypeComboBox_SelectionChanged;
-                if (UseHomeStationValue)
+                if (StationOrTypeComboBox.Items.Contains(GenericCodeClass.ChosenStationOrTypeString))
                     StationOrTypeComboBox.SelectedItem = GenericCodeClass.ChosenStationOrTypeString;
                 else
                     StationOrTypeComboBox.SelectedIndex = 0;
-
+                
             }
         }
 
-        private void PopulateDirBox(int ProductBoxIndex, string ProductName, string StationName, string TypeName, bool UseHomeStationValue)
+
+        private void PopulateDirBox(int ProductBoxIndex, string ProductName, string StationName, string TypeName)//, bool UseHomeStationValue)
         {
 
             if (DirComboBox != null)
             {
                 List<string> DirList = new List<string>();
+
+                
 
                 if (ProductName.Contains('&'))
                     ProductName = ProductName.Substring(0, 12);
@@ -288,11 +294,14 @@ namespace AvWx
                 }
 
 
-                if (UseHomeStationValue)
+                if (DirComboBox.Items.Contains(GenericCodeClass.ChosenDirString)) //UseHomeStationValue && 
                     DirComboBox.SelectedItem = GenericCodeClass.ChosenDirString;
                 else
                     DirComboBox.SelectedIndex = 0;
+                
             }
+
+
         }
 
         private void PopulateProductBox(bool UseHomeStationVlaue)
@@ -306,14 +315,16 @@ namespace AvWx
 
                 foreach (string str in ProductList)
                     ProductComboBox.Items.Add(str);
-
+                
                 ProductComboBox.SelectionChanged += ProductComboBox_SelectionChanged;
                 if (UseHomeStationVlaue)
                     ProductComboBox.SelectedItem = GenericCodeClass.ChosenProductString;
                 else
                     ProductComboBox.SelectedIndex = 0;
+
                 SetOptions();   //Set enabled properties for all boxes
             }
+
         }
 
         private void RegionComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -321,7 +332,7 @@ namespace AvWx
             if (ProductComboBox != null && RegionComboBox != null)
             {
                 if (ProductComboBox.SelectedItem.Equals("Graphical Area Forecasts") || ProductComboBox.SelectedItem.Equals("Weather Cameras"))
-                    PopulateStationOrTypeBox(ProductComboBox.SelectedIndex, ProductComboBox.Items[ProductComboBox.SelectedIndex].ToString(), RegionComboBox.Items[RegionComboBox.SelectedIndex].ToString(), false);
+                    PopulateStationOrTypeBox(ProductComboBox.SelectedIndex, ProductComboBox.Items[ProductComboBox.SelectedIndex].ToString(), RegionComboBox.Items[RegionComboBox.SelectedIndex].ToString());//, false);
             }
         }
 
@@ -331,8 +342,7 @@ namespace AvWx
             {
                 if (ProductComboBox.SelectedItem.Equals("Weather Cameras"))
                 {
-            
-                    PopulateDirBox(ProductComboBox.SelectedIndex, ProductComboBox.Items[ProductComboBox.SelectedIndex].ToString(), RegionComboBox.Items[RegionComboBox.SelectedIndex].ToString(), StationOrTypeComboBox.Items[StationOrTypeComboBox.SelectedIndex].ToString(), false);
+                    PopulateDirBox(ProductComboBox.SelectedIndex, ProductComboBox.Items[ProductComboBox.SelectedIndex].ToString(), RegionComboBox.Items[RegionComboBox.SelectedIndex].ToString(), StationOrTypeComboBox.Items[StationOrTypeComboBox.SelectedIndex].ToString());//, false);
                 }
             }
         }

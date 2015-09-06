@@ -254,17 +254,17 @@ namespace AvWx
                     select EnumChoice;
 
                     IEnumerable<XElement> Codes =
-                    from EnumOptions in ProductNode.Descendants()
+                    from EnumOptions in Choices.Descendants()
                     where EnumOptions.Name.ToString().Equals("Code")
                     select EnumOptions;
-
-                    return Codes.First().Value.ToString();
+                    if(Codes.Count() > 0)
+                        return Codes.First().Value.ToString();
                 }
                 else
                     return Options.First().Value.ToString();
             }
 
-            return null;
+            return "";
 
         }
 
@@ -285,7 +285,7 @@ namespace AvWx
                 return Options.First().Value.ToString();
             }
 
-            return null;
+            return "";
 
         }
 

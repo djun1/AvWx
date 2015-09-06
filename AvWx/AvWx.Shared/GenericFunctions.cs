@@ -132,6 +132,8 @@ static class GenericCodeClass
         {
             if (ChosenRegion.Equals("Surface"))
             {
+                //ugly hack because the url for surface charts is different
+                HomeStationURL = HomeStationURL.Replace("altitude", "surface");
                 FileNames.Add("LatestPrev-analsfc.png");
                 FileNames.Add("Latest-analsfc.png");
             }
