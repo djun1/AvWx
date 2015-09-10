@@ -171,10 +171,12 @@ static class GenericCodeClass
         if (ChosenProduct.Equals("Graphical Area Forecasts"))
         {
             if (ChosenStationOrTypeString.Contains("Clouds"))   //Ashwin - for some reason, the "&" character causes problems!
-                FileNames.Add("Latest-"+ RegionCode + "_cldwx_000.png");
+		for (int i = 0; i < 18; i += 6)
+			FileNames.Add("Latest-"+ RegionCode + "_cldwx_" + i.ToString("D3") + ".png");
 
             if (ChosenStationOrTypeString.Contains("Icing"))
-                FileNames.Add("Latest-" + RegionCode + "_turbc_000.png");
+		for (int i = 0; i < 18; i += 6)
+			FileNames.Add("Latest-"+ RegionCode + "_turbc_" + i.ToString("D3") + ".png");
         }
 
         if (ChosenProduct.Equals("Weather Cameras"))
