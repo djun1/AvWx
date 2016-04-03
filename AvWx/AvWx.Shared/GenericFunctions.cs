@@ -184,6 +184,8 @@ static class GenericCodeClass
             for(int i = 1; i < 7; i++)
                 FileNames.Add(RegionCode + "_" + ChosenDir + "-full-" + i.ToString() + "-e.jpeg");
         }
+
+        FileNames.Reverse();
             
 
     }
